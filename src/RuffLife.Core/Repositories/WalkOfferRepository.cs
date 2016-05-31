@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
@@ -36,7 +37,7 @@ namespace RuffLife.Core.Repositories
         }
 
         //adds user on offer
-        public void VoteOnOffer(Walker walkerThatVoted, WalkOffer votedOffer)
+        public void VoteOnOffer(ViewWalkerDto walkerThatVoted, WalkOffer votedOffer)
         {
             var walkOffer = _ruffLifeContext.WalkOffers.FirstOrDefault(o => o.Id == votedOffer.Id);
             if (walkOffer == null || !walkOffer.IsActive) return;

@@ -1,4 +1,5 @@
 ﻿using System;
+using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Data.Models;
 
@@ -8,8 +9,8 @@ namespace RuffLife.Core.Services.Interfaces
     {
         void CreateOffer(CreateWalkOfferDto createdOffer);
 
-        void VoteOnOffer(Walker walkerToAdd, WalkOffer walkOfferToUpdate);
+        void VoteOnOffer(ViewWalkerDto walkerToAdd, int walkOfferToUpdate);
 
-        void LockWalkOffer(Walker walkerSelected, WalkOffer walkOfferToLock);
+        void LockWalkOffer(ViewWalkerDto walkerSelected, WalkOffer walkOfferToLock);
     }
 }

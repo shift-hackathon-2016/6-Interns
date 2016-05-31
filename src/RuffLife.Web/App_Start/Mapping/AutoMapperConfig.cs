@@ -37,6 +37,9 @@ namespace RuffLife.Web.Mapping
             Mapper.CreateMap<Walk, ViewWalkDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<Dog, ViewDogDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<ReviewForDog, ViewReviewForDogDto>().IgnoreUnmappedProperties();
+
+            Mapper.CreateMap<UpdateWalkDto, ViewWalkDto>().IgnoreUnmappedProperties();
+            Mapper.CreateMap<ViewWalkDto, UpdateWalkDto>().IgnoreUnmappedProperties();
         }
     }
 }

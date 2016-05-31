@@ -1,19 +1,26 @@
-﻿using RuffLife.Core.Models.WalkOffer;
+﻿using AutoMapper;
+using RuffLife.Core.Models.Walk;
+using RuffLife.Core.Models.Walker;
+using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Core.Repositories.Interfaces;
+using RuffLife.Core.Services.Interfaces;
 using RuffLife.Data.Models;
 
 namespace RuffLife.Core.Services
 {
-    public class WalkOfferService
+    public class WalkOfferService : IWalkOfferService
     {
         private readonly IWalkOfferRepository _walkOfferRepository;
         private readonly IWalkRepository _walkRepository;
+        private readonly IWalkerRepository _walkerRepository;
 
         public WalkOfferService(IWalkOfferRepository walkOfferRepository,
-            IWalkRepository walkRepository)
+            IWalkRepository walkRepository,
+            IWalkerRepository walkerRepository)
         {
             _walkOfferRepository = walkOfferRepository;
             _walkRepository = walkRepository;
+            _walkerRepository = walkerRepository;
         }
 
         public void CreateOffer(CreateWalkOfferDto createdOffer)
@@ -21,14 +28,23 @@ namespace RuffLife.Core.Services
             _walkOfferRepository.CreateWalkOffer(createdOffer);
         }
 
-        public void VoteOnOffer(Walker walkerToAdd, WalkOffer walkOfferToUpdate)
+        public void VoteOnOffer(ViewWalkerDto walkerToAdd, int walkOfferIdToUpdate)
         {
-            _walkOfferRepository.VoteOnOffer(walkerToAdd,walkOfferToUpdate);
+            var walkOffer = _walkOfferRepository.GetOfferFromRepo(walkOfferIdToUpdate);
+
+            _walkOfferRepository.VoteOnOffer(walkerToAdd, walkOffer);
         }
 
-        public void LockWalkOffer(Walker walkerSelected, WalkOffer walkOfferToLock)
+        public void LockWalkOffer(ViewWalkerDto walkerSelected, WalkOffer walkOfferToLock)
         {
             _walkOfferRepository.LockOffer(walkOfferToLock);
+
+            var walk = _walkRepository.GetWalk(walkOfferToLock.Walk.Id);
+            walk.Walker = Mapper.Map<Walker>(walkerSelected);
+
+            _walkRepository.UpdateWalk(Mapper.Map<UpdateWalkDto>(walk));
+
+
         }
 
         public void Dispose()
