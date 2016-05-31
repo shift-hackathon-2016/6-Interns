@@ -1,5 +1,7 @@
 using RuffLife.Core.Repositories;
 using RuffLife.Core.Repositories.Interfaces;
+using RuffLife.Core.Services;
+using RuffLife.Core.Services.Interfaces;
 using RuffLife.Data.Context;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RuffLife.Web.NinjectWebCommon), "Start")]
@@ -66,7 +68,10 @@ namespace RuffLife.Web
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<RuffLifeContext>().ToSelf();
+
             kernel.Bind<IOwnerRepository>().To<OwnerRepository>();
+
+            kernel.Bind<IOwnerService>().To<OwnerService>();
         }        
     }
 }
