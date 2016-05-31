@@ -1,0 +1,60 @@
+﻿using RuffLife.Core.Models.Walker;
+using RuffLife.Data.Context;
+using RuffLife.Data.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AutoMapper;
+
+namespace RuffLife.Core.Repositories
+{
+    class WalkerRepository
+    {
+        private readonly RuffLifeContext _ruffLifeContext;
+        public WalkerRepository(RuffLifeContext context)
+        {
+            _ruffLifeContext = context;
+        }
+
+        public void CreateWalker(CreateWalkerDto newWalker)
+        {
+            var walker = new Walker()
+            {
+                ContactNumber = newWalker.ContactNumber,
+                Email = newWalker.Email,
+                Location = newWalker.Location,
+                Username = newWalker.Username,
+                CostPerHourInHRK = newWalker.CostPerHourInHRK,
+                Description = newWalker.Description,
+            };
+
+            _ruffLifeContext.Walkers.Add(walker);
+            _ruffLifeContext.SaveChanges();
+        }
+
+        public IList<ViewWalkerDto> GetAllWalkers()
+        {
+            var walkers = _ruffLifeContext.Walkers
+                .Include("Walks")
+                .Include("ReviewsForWalker")
+                .Include("ReviewsForDogs")
+                .Select(walker => Mapper.Map<ViewWalkerDto>(walker))
+                .ToList();
+
+            return walkers.ToList();
+        }
+
+        public ViewWalkerDto GetWalker(int walkerId)
+        {
+            var walker = _ruffLifeContext.Walkers
+                .Include("Walks")
+                .Include("ReviewsForWalker")
+                .Include("ReviewsForDogs")
+                .FirstOrDefault(x => x.Id == walkerId);
+
+            return Mapper.Map<ViewWalkerDto>(walker);
+        }
+    }
+}

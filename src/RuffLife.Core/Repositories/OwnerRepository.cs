@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO.MemoryMappedFiles;
 using System.Linq;
 using AutoMapper;
 using RuffLife.Core.Models.Owner;
