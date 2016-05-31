@@ -1,3 +1,5 @@
+using RuffLife.Data.Context;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RuffLife.Web.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(RuffLife.Web.NinjectWebCommon), "Stop")]
 
@@ -61,6 +63,7 @@ namespace RuffLife.Web
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<RuffLifeContext>().ToSelf();
         }        
     }
 }
