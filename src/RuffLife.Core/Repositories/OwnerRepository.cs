@@ -17,7 +17,7 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext = context;
         }
 
-        public async void CreateAsync(CreateOwnerDto newOwner)
+        public async void CreateOwnerAsync(CreateOwnerDto newOwner)
         {
             var owner = new Owner()
             {
