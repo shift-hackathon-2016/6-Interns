@@ -6,4 +6,7 @@ function RegisterUserTypeController() {
     var vm = this;
 
     vm.text = 'Hello user';
+
+    vm.userType;
+
 };
