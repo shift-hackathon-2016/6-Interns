@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RuffLife.Data.Models;
 
-namespace RuffLife.Core.Models.Owner
+namespace RuffLife.Core.Models.Walker
 {
     public class CreateOwnerDto
     {

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Repositories;
 using RuffLife.Data.Models;
 
@@ -24,6 +24,7 @@ namespace RuffLife.Web.Mapping
 #pragma warning disable 618
 
             Mapper.CreateMap<Owner, ViewOwnerDto>();
+            Mapper.CreateMap<Walker, ViewWalkerDto>();
         }
     }
 }

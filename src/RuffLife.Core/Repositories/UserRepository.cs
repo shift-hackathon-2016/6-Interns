@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Models.Walker;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
 
