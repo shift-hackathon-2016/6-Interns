@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using data = RuffLife.Data.Models;
 
-namespace RuffLife.Core.Models.ReviewForDog
+namespace RuffLife.Core.Models.ReviewForDog 
 {
     public class CreateReviewForDogDto
     {
