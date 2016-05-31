@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using RuffLife.Core.Services.Interfaces;
+using RuffLife.Core.Models.Walker;
 
 namespace RuffLife.Web.Controllers.API
 {
@@ -26,6 +27,21 @@ namespace RuffLife.Web.Controllers.API
             if (walker != null)
                 return Ok(walker);
             return BadRequest("Walker with that Id doesnt exist");
+        }
+
+        [Route("get-all")]
+        [HttpGet]
+        public IHttpActionResult GetAllWalkers()
+        {
+            var walkers = _walkerService.GetAllWalkers();
+            return Ok(walkers);
+        }
+
+        [Route("create")]
+        [HttpPost]
+        public void CreateWalker(CreateWalkerDto walker)
+        {
+            _walkerService.CreateWalker(walker);
         }
     }
 }
