@@ -60,7 +60,7 @@ namespace RuffLife.Data.Context
             {
                 new ReviewForDog { Grade = 5, Review = "Super", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Izabela"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Dota") },
                 new ReviewForDog { Grade = 5, Review = "Super", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Josipa"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Alba") },
-                new ReviewForDog { Grade = 4, Review = "Vrldobro", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Ante"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Vau") }
+                new ReviewForDog { Grade = 4, Review = "Vrlo dobro", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Ante"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Vau") }
             };
             reviewForDogs.ForEach(x => context.ReviewsForDogs.Add(x));
             context.SaveChanges();

@@ -62,6 +62,11 @@
     <Compile Include="Context\Configurations\WalkerConfiguration.cs" />
     <Compile Include="Context\RuffLifeContext.cs" />
     <Compile Include="Context\RuffLifeInitializer.cs" />
+    <Compile Include="Migrations\201605311112358_added-walk-offer.cs" />
+    <Compile Include="Migrations\201605311112358_added-walk-offer.Designer.cs">
+      <DependentUpon>201605311112358_added-walk-offer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Dog.cs" />
     <Compile Include="Models\Owner.cs" />
@@ -75,6 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605311112358_added-walk-offer.resx">
+      <DependentUpon>201605311112358_added-walk-offer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
