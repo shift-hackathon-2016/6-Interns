@@ -76,6 +76,7 @@ namespace RuffLife.Web
             kernel.Bind<RuffLifeContext>().ToSelf();
 
             kernel.Bind<IOwnerRepository>().To<OwnerRepository>();
+            kernel.Bind<IDogRepository>().To<DogRepository>();
             kernel.Bind<IReviewForDogRepository>().To<ReviewForDogRepository>();
             kernel.Bind<IReviewForWalkerRepository>().To<ReviewForWalkerRepository>();
             kernel.Bind<IWalkerRepository>().To<WalkerRepository>();

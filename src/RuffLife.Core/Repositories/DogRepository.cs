@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Repositories
 {
-    class DogRepository : IDogRepository
+    public class DogRepository : IDogRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public DogRepository(RuffLifeContext context)
