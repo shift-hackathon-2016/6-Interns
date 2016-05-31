@@ -42,12 +42,34 @@ namespace RuffLife.Web.Controllers.API
             return BadRequest("Owner with that Id doesnt exist");
         }
 
-        [Route("get-single/{ownerId}/create-dog")]
+        [Route("get-single/{ownerId}/dogs/create")]
         [HttpPost]
         public void CreateDog(CreateDogDto newDog, int ownerId)
         {
             newDog.Owner = _ownerService.GetOwner(ownerId);
             _dogService.CreateDog(newDog);
+        }
+
+        [Route("get-single/{ownerId}/dogs/update/{Id}")]
+        [HttpPost]
+        public void UpdateDog(UpdateDogDto updatedDog)
+        {
+            _dogService.UpdateDog(updatedDog);
+        }
+
+        [Route("get-single/{ownerId}/dogs/delete/{Id}")]
+        [HttpPost]
+        public void DeleteDog(int dogId)
+        {
+            _dogService.DeleteDog(dogId);
+        }
+
+        [Route("get-single/{ownerId}/dogs")]
+        [HttpGet]
+        public IHttpActionResult GetDogsByOwner(int ownerId)
+        {
+            var dogs = _dogService.GetDogsByOwner(ownerId);
+            return Ok(dogs);
         }
     }
 }
