@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RuffLife.Core.Models.Owner;
 using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Repositories;
 using RuffLife.Data.Models;

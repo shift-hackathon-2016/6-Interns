@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Owner\OwnerDTO.cs" />
-    <Compile Include="Models\Owner\WalkerDTO.cs" />
+    <Compile Include="Models\Walker\WalkerDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\WalkerRepository.cs" />
@@ -63,7 +63,6 @@
     <Folder Include="Models\Dog\" />
     <Folder Include="Models\ReviewForDog\" />
     <Folder Include="Models\ReviewForWalker\" />
-    <Folder Include="Models\Walker\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
