@@ -12,7 +12,7 @@ using RuffLife.Data.Models;
 
 namespace RuffLife.Web.Controllers.API
 {
-    [RoutePrefix("walk-offer")]
+    [RoutePrefix("api/walk-offer")]
     public class WalkOfferController : ApiController
     {
         private readonly IWalkOfferService _walkOfferService;
