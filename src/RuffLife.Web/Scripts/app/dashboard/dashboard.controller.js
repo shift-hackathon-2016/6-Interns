@@ -2,11 +2,9 @@
 
 angular.module('app').controller('dashboardController', DashboardController);
 
-UserRepository.$inject = ['userRepository'];
+SignInController.$inject = ['$http'];
 
-function DashboardController(userRepository, $stateParams) {
+function DashboardController($http) {
+
     var vm = this;
-    
-    vm.user = userRepository.currentUser;
-   
 };

@@ -5,7 +5,7 @@ angular.module('app').factory('userAuthService', UserAuthService);
 UserAuthService.$inject = ['$http', '$q'];
 
 function UserAuthService($http, $q) {
-    var users = [{ username: 'mirko', password: 'hej' }, { username: 'andrea', password: 'hoj' }];
+    var users = [{ username: 'mirko', password: 'hej' }, { username: 'andrea', password: 'hoj' }]; 
     var newUserType;
     //function getAllUsers() {
     //    $http.post('').then(function (users) {

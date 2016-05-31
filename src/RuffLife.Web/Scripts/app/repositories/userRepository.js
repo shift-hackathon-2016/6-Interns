@@ -4,7 +4,7 @@ angular.module('app').factory('userRepository', UserRepository);
 
 UserRepository.$inject = ['$q'];
 
-function UserRepository() {
+function UserRepository($q) {
 
     var users = [{
         'userType': 'owner',
@@ -29,12 +29,17 @@ function UserRepository() {
         });
     }
 
-    var currentUser = get(username);
+    function getAll() {
+        return $q.resolve(users);
+    }
+
+    //var currentUser = get(username);
 
     return {
         users: users,
         currentUser: currentUser,
-        get: get
+        get: get,
+        getAll: getAll,
     }
 
 }
