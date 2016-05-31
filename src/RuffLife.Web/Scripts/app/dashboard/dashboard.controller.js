@@ -2,9 +2,9 @@
 
 angular.module('app').controller('dashboardController', DashboardController);
 
-SignInController.$inject = ['$http'];
 
-function DashboardController($http) {
+function DashboardController() {
 
+   
     var vm = this;
 };
