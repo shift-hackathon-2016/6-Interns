@@ -4,7 +4,7 @@ using System.Web.Http;
 
 namespace RuffLife.Web.Controllers.API
 {
-    [RoutePrefix("reviewForWalkers")]
+    [RoutePrefix("api/review-for-walkers")]
     public class ReviewForWalkerController : ApiController
     {
         public readonly IReviewForWalkerService _reviewForWalkerService;
