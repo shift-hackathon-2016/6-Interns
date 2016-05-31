@@ -41,6 +41,8 @@ namespace RuffLife.Core.Repositories
 
             walk.Price = updatedWalk.Price;
             walk.Walker = updatedWalk.Walker;
+
+            _ruffLifeContext.SaveChanges();
         }
 
         public ViewWalkDto GetWalk(int walkId)
@@ -70,7 +72,7 @@ namespace RuffLife.Core.Repositories
             var walks = _ruffLifeContext.Walks
                 .Include("Walkers")
                 .Include("Dogs")
-                .Where(x => x.Walker.Id == dogId)
+                .Where(x => x.Dogs.Any(_ => _.Id == dogId))
                 .Select(walk => Mapper.Map<ViewWalkDto>(walk))
                 .ToList();
 
