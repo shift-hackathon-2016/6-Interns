@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Repositories.Interfaces
 {
-    interface IReviewForWalkerRepository : IDisposable
+    public interface IReviewForWalkerRepository : IDisposable
     {
         void CreateReviewForWalker(CreateReviewForWalkerDto newReviewForWalker);
         void UpdateReviewForWalker(UpdateReviewForWalkerDto updatedReviewForWalker);

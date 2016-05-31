@@ -5,6 +5,7 @@ using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Core.Services;
 using RuffLife.Core.Services.Interfaces;
 using RuffLife.Data.Context;
+using RuffLife.Data.Models;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RuffLife.Web.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(RuffLife.Web.NinjectWebCommon), "Stop")]
@@ -75,6 +76,12 @@ namespace RuffLife.Web
             kernel.Bind<RuffLifeContext>().ToSelf();
 
             kernel.Bind<IOwnerRepository>().To<OwnerRepository>();
+            kernel.Bind<IReviewForDogRepository>().To<ReviewForDogRepository>();
+            kernel.Bind<IReviewForWalkerRepository>().To<ReviewForWalkerRepository>();
+            kernel.Bind<IWalkerRepository>().To<WalkerRepository>();
+            kernel.Bind<IWalkOfferRepository>().To<WalkOfferRepository>();
+            kernel.Bind<IWalkRepository>().To<WalkRepository>();
+
 
             kernel.Bind<IOwnerService>().To<OwnerService>();
         }        
