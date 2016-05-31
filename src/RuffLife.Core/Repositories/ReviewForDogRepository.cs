@@ -48,13 +48,12 @@ namespace RuffLife.Core.Repositories
         public IList<ViewReviewForDogDto> GetReviewsForDogByDog(int dogId)
         {
             var reviewsForDogs = _ruffLifeContext.ReviewsForDogs
-                .Include("Walkers")
-                .Include("Dogs")
+                .Include("Walker")
+                .Include("Dog")
                 .Where(x => x.Dog.Id == dogId)
-                .Select(dog => Mapper.Map<ViewReviewForDogDto>(dog))
                 .ToList();
 
-            return reviewsForDogs;
+            return reviewsForDogs.Select(dog => Mapper.Map<ViewReviewForDogDto>(dog)).ToList();
         }
 
         public void Dispose()
