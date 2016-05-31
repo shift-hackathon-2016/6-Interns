@@ -7,15 +7,13 @@ SignInController.$inject = ['userAuthService', '$state'];
 function SignInController(userAuthService, $state) {
     var vm = this;
 
-    vm.user = {
-        username: '',
-        password: ''
-    };
+    vm.username = '';
     vm.errorMessage = '';
 
     vm.login = function () {
-        userAuthService.isValidUser(vm.user).then(function (response) {
-            if (response == 0) {
+        userAuthService.isValidUser(vm.username).then(function (response) {
+            console.log(response);
+            if (response == 1) {
                 return $state.go('dashboard');
             }
         })
