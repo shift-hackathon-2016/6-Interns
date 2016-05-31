@@ -11,6 +11,6 @@ namespace RuffLife.Data.Models
         public bool IsActive { get; set; }
 
         public virtual Walk Walk { get; set; }
-        public virtual Walker Walker { get; set; }
+        public virtual ICollection<Walker> Walker { get; set; }
     }
 }

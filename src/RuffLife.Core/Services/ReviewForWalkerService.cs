@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Services
 {
-    class ReviewForWalkerService : IReviewForWalkerService
+    public class ReviewForWalkerService : IReviewForWalkerService
     {
         private readonly IReviewForWalkerRepository _reviewForWalkerRepository;
 
