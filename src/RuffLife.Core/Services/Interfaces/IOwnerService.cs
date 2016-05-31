@@ -9,5 +9,6 @@ namespace RuffLife.Core.Services.Interfaces
     {
         void CreateOwner(CreateOwnerDto owner);
         IList<ViewOwnerDto> GetAllOwners();
+        ViewOwnerDto GetOwner(int ownerId);
     }
 }

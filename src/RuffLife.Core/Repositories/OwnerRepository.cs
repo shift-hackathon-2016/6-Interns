@@ -42,6 +42,16 @@ namespace RuffLife.Core.Repositories
             return owners.Select(owner => Mapper.Map<ViewOwnerDto>(owner)).ToList();
         }
 
+        public ViewOwnerDto GetOwner(int ownerId)
+        {
+            var owner = _ruffLifeContext.Owners
+                .Include("Dogs")
+                .Include("ReviewsGiven")
+                .FirstOrDefault(x => x.Id == ownerId);
+
+            return Mapper.Map<ViewOwnerDto>(owner);
+        }
+
         public void Dispose()
         {
             _ruffLifeContext.Dispose();

@@ -2,30 +2,36 @@
 
 angular.module('app').factory('userAuthService', UserAuthService);
 
-UserAuthService.$inject = ['$http', '$q'];
+UserAuthService.$inject = ['$http', '$q', '$rootScope'];
 
-function UserAuthService($http, $q) {
-    //var users = [{ username: 'mirko', password: 'hej' }, { username: 'andrea', password: 'hoj' }];
+function UserAuthService($http, $q, $rootScope) {
     var newUserType;
-    var users;
+    var owners;
+    var walkers;
     function getAllOwners() {
-        $http.get('http://localhost:2493/api/owners/get-all').then(function (response) {
-            console.log(response.data);
-            users = response.data;
+        $http.get('/api/owners/get-all').then(function (response) {
+            owners = response.data;
         });
     };
-
     getAllOwners();
 
-    function isValidUser(username) {
-        var isValid = 0;
-        console.log(users);
-        angular.forEach(users, function (value, key) {
-            console.log(value.Username);
-            if (value.Username == username) isValid = 1;
-            
+    function getAllWalkers() {
+        $http.get('/api/walkers/get-all').then(function (response) {
+            walkers = response.data;
         });
+    };
+    getAllWalkers();
 
+    function isValidUser(username, type) {
+        var isValid = 0;
+        if (type == 'owner')
+            angular.forEach(owners, function (value, key) {
+                if (value.Username == username) { isValid = 1; $rootScope.user = value; }
+            });
+        else
+            angular.forEach(walkers, function (value, key) {
+                if (value.Username == username) { isValid = 1; $rootScope.user = value; }
+            });
         return $q.resolve(isValid);
     };
 

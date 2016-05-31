@@ -6,6 +6,7 @@ using RuffLife.Core.Models.Walk;
 using RuffLife.Data.Context;
 using RuffLife.Core.Models.Dog;
 using RuffLife.Core.Models.ReviewForDog;
+using RuffLife.Core.Models.ReviewForWalker;
 
 namespace RuffLife.Web.Mapping
 {
@@ -40,6 +41,8 @@ namespace RuffLife.Web.Mapping
 
             Mapper.CreateMap<UpdateWalkDto, ViewWalkDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<ViewWalkDto, UpdateWalkDto>().IgnoreUnmappedProperties();
+
+            Mapper.CreateMap<ReviewForWalker, ViewReviewForWalkerDto>().IgnoreUnmappedProperties();
         }
     }
 }

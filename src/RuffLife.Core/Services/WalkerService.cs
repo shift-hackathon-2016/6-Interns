@@ -24,6 +24,17 @@ namespace RuffLife.Core.Services
             return walker;
         }
 
+        public IList<ViewWalkerDto> GetAllWalkers()
+        {
+            var walkers = _walkerRepository.GetAllWalkers();
+            return walkers;
+        }
+
+        public void CreateWalker(CreateWalkerDto newWalker)
+        {
+            _walkerRepository.CreateWalker(newWalker);
+        }
+
         public void Dispose()
         {
             _walkerRepository.Dispose();

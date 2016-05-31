@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using RuffLife.Core.Services.Interfaces;
+using RuffLife.Core.Models.Owner;
 
 namespace RuffLife.Web.Controllers.API
 {
@@ -19,6 +20,23 @@ namespace RuffLife.Web.Controllers.API
         {
             var owners = _ownerService.GetAllOwners();
             return Ok(owners);
+        }
+
+        [Route("create")]
+        [HttpPost]
+        public void CreateOwner(CreateOwnerDto owner)
+        {
+            _ownerService.CreateOwner(owner);
+        }
+
+        [Route("get-single/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetSingleOwner(int id)
+        {
+            var owner = _ownerService.GetOwner(id);
+            if (owner != null)
+                return Ok(owner);
+            return BadRequest("Owner with that Id doesnt exist");
         }
     }
 }

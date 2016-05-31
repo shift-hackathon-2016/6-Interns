@@ -21,14 +21,19 @@ namespace RuffLife.Core.Services
         }
 
 
-        public void CreateOwner(CreateOwnerDto owner)
+        public void CreateOwner(CreateOwnerDto newOwner)
         {
-            _ownerRepository.CreateOwner(Mapper.Map<Owner>(owner));
+            _ownerRepository.CreateOwner(Mapper.Map<Owner>(newOwner));
         }
 
         public IList<ViewOwnerDto> GetAllOwners()
         {
             return _ownerRepository.GetAllOwners();
+        }
+
+        public ViewOwnerDto GetOwner(int ownerId)
+        {
+            return _ownerRepository.GetOwner(ownerId);
         }
 
         public void Dispose()
