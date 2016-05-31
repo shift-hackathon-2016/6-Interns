@@ -229,7 +229,6 @@
     <Content Include="Scripts\app\registerUserType\registerUserType.controller.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.state.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.template.html" />
-    <Content Include="Scripts\app\repositories\userRepository.js" />
     <Content Include="Scripts\app\signIn\signIn.controller.js" />
     <Content Include="Scripts\app\signIn\signIn.state.js" />
     <Content Include="Scripts\app\signIn\signIn.template.html" />
