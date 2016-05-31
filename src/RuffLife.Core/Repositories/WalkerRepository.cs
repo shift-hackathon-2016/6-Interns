@@ -40,11 +40,13 @@ namespace RuffLife.Core.Repositories
         {
             var walkers = _ruffLifeContext.Walkers
                 .Include("Walks")
-                .Include("ReviewsGiven")
                 .Include("ReviewsReceived")
+                .Include("ReviewsGiven")
                 .ToList();
 
-                return walkers.Select(walker => Mapper.Map<ViewWalkerDto>(walker)).ToList();
+            return walkers
+                .Select(walker => Mapper.Map<ViewWalkerDto>(walker))
+                .ToList();
         }
 
         public ViewWalkerDto GetWalker(int walkerId)
