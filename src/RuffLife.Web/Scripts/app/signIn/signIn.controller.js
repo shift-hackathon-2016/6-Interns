@@ -14,11 +14,14 @@ function SignInController(userAuthService, $state) {
     vm.errorMessage = '';
 
     vm.login = function () {
-        userAuthService.isValidUser().then(function (response) {
+        userAuthService.isValidUser(vm.user).then(function (response) {
             if (response == 0) {
-                console.log('Success');
-                return $state.go('chooseUserType');
+                return $state.go('dashboard');
             }
         })
+    };
+
+    vm.register = function () {
+        return $state.go('chooseUserType');
     };
 };
