@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using RuffLife.Data.Context.Configurations;
 using RuffLife.Data.Models;
 
 namespace RuffLife.Data.Context
@@ -24,6 +25,13 @@ namespace RuffLife.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Configurations.Add(new OwnerConfiguration());
+            modelBuilder.Configurations.Add(new WalkerConfiguration());
+            modelBuilder.Configurations.Add(new DogConfiguration());
+
+
+
         }
     }
 }
