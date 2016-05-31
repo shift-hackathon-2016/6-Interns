@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\RuffLifeContext.cs" />
+    <Compile Include="Context\RuffLifeInitializer.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Dog.cs" />
     <Compile Include="Models\Owner.cs" />

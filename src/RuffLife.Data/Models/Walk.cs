@@ -8,8 +8,8 @@ namespace RuffLife.Data.Models
 {
     public class Walk:BaseModel
     {
-        public DateTimeOffset StartTime { get; set; }
-        public DateTimeOffset EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public string Location { get; set; }
         public double Price { get; set; }
 
