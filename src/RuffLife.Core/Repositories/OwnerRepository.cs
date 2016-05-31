@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
+using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
-using RuffLife.Core.Models.Owner;
 
 namespace RuffLife.Core.Repositories
 {
-    public class OwnerRepository
+    public class OwnerRepository : IOwnerRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public OwnerRepository(RuffLifeContext context)
@@ -14,7 +16,7 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext = context;
         }
 
-        public async void CreateAsync(CreateOwnerDto newOwner)
+        public void CreateOwner(Owner newOwner)
         {
             var owner = new Owner()
             {
@@ -27,15 +29,22 @@ namespace RuffLife.Core.Repositories
             };
 
             _ruffLifeContext.Owners.Add(owner);
-            await  _ruffLifeContext.SaveChangesAsync();
+            _ruffLifeContext.SaveChanges();
         }
 
-        public IList<Owner> GetAllOwners()
+        public IList<ViewOwnerDto> GetAllOwners()
         {
             var owners = _ruffLifeContext.Owners
-                .Include("Dogs").ToList();
+                .Include("Dogs")
+                .Select(owner => Mapper.Map<ViewOwnerDto>(owner))
+                .ToList();
 
-            return owners.ToList();
-        } 
+            return owners;
+        }
+
+        public void Dispose()
+        {
+            _ruffLifeContext.Dispose();
+        }
     }
 }

@@ -11,7 +11,9 @@ namespace RuffLife.Web.Mapping
         private static IMappingExpression<TSource, TDestination> IgnoreUnmappedProperties<TSource, TDestination>(
             this IMappingExpression<TSource, TDestination> expression)
         {
+#pragma warning disable 618
             var typeMap = Mapper.FindTypeMapFor<TSource, TDestination>();
+#pragma warning restore 618
             if (typeMap == null) return expression;
             foreach (var unmappedPropertyName in typeMap.GetUnmappedPropertyNames())
             {
