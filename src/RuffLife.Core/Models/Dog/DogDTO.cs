@@ -1,9 +1,11 @@
-﻿using System;
+﻿using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Models.ReviewForDog;
+using RuffLife.Core.Models.Walk;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using data = RuffLife.Data.Models;
 
 namespace RuffLife.Core.Models.Dog
 {
@@ -15,7 +17,7 @@ namespace RuffLife.Core.Models.Dog
         public char Gender { get; set; }
         public string Description { get; set; }
         public string Notes { get; set; }
-        public virtual data.Owner Owner { get; set; }
+        public virtual ViewOwnerDto Owner { get; set; }
     }
 
     public class UpdateDogDto
@@ -34,8 +36,8 @@ namespace RuffLife.Core.Models.Dog
         public char Gender { get; set; }
         public string Description { get; set; }
         public string Notes { get; set; }
-        public virtual data.Owner Owner { get; set; }
-        public virtual ICollection<data.ReviewForDog> ReviewsReceived { get; set; }
-        public virtual ICollection<data.Walk> Walks { get; set; }
+        public virtual ViewOwnerDto Owner { get; set; }
+        public virtual ICollection<ViewReviewForDogDto> ReviewsReceived { get; set; }
+        public virtual ICollection<ViewWalkDto> Walks { get; set; }
     }
 }

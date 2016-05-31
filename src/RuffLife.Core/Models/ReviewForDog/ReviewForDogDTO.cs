@@ -1,9 +1,10 @@
-﻿using System;
+﻿using RuffLife.Core.Models.Dog;
+using RuffLife.Core.Models.Walker;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using data = RuffLife.Data.Models;
 
 namespace RuffLife.Core.Models.ReviewForDog 
 {
@@ -11,8 +12,8 @@ namespace RuffLife.Core.Models.ReviewForDog
     {
         public int Grade { get; set; }
         public string Review { get; set; }
-        public virtual data.Walker Walker { get; set; }
-        public virtual data.Dog Dog { get; set; }
+        public virtual ViewWalkerDto Walker { get; set; }
+        public virtual ViewDogDto Dog { get; set; }
     }
 
     public class UpdateReviewForDogDto
@@ -27,7 +28,7 @@ namespace RuffLife.Core.Models.ReviewForDog
         public int Id { get; set; }
         public int Grade { get; set; }
         public string Review { get; set; }
-        public virtual data.Walker Walker { get; set; }
-        public virtual data.Dog Dog { get; set; }
+        public virtual ViewWalkerDto Walker { get; set; }
+        public virtual ViewDogDto Dog { get; set; }
     }
 }

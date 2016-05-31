@@ -61,6 +61,7 @@
     <Compile Include="Models\Walk\WalkDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DogRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IDogRepository.cs" />
     <Compile Include="Repositories\Interfaces\IOwnerRepository.cs" />
     <Compile Include="Repositories\Interfaces\IReviewForDogRepository.cs" />
     <Compile Include="Repositories\Interfaces\IReviewForWalkerRepository.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="Repositories\OwnerRepository.cs" />
     <Compile Include="Repositories\ReviewForDogRepository.cs" />
     <Compile Include="Repositories\ReviewForWalkerRepository.cs" />
+    <Compile Include="Services\DogService.cs" />
+    <Compile Include="Services\Interfaces\IDogService.cs" />
     <Compile Include="Services\Interfaces\IOwnerService.cs" />
     <Compile Include="Services\Interfaces\IReviewForDogService.cs" />
     <Compile Include="Services\Interfaces\IReviewForWalkerService.cs" />
