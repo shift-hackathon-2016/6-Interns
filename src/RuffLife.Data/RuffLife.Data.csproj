@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\Configurations\DogConfiguration.cs" />
+    <Compile Include="Context\Configurations\OwnerConfiguration.cs" />
+    <Compile Include="Context\Configurations\WalkerConfiguration.cs" />
     <Compile Include="Context\RuffLifeContext.cs" />
     <Compile Include="Context\RuffLifeInitializer.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Models\ReviewForWalker.cs" />
     <Compile Include="Models\Walk.cs" />
     <Compile Include="Models\Walker.cs" />
+    <Compile Include="Models\WalkOffer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
