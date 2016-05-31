@@ -2,8 +2,8 @@
 
 angular.module('app').config(AppConfig)
 
-AppConfig.$inject = ['$urlRouterProvider']
+AppConfig.$inject = ['$urlRouterProvider', '$stateProvider']
 
 function AppConfig($urlRouterProvider) {
-    
+    $urlRouterProvider.otherwise('/sign-in');
 }
