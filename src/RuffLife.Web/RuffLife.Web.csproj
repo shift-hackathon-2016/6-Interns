@@ -210,10 +210,13 @@
     </Content>
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\services\dogReviewService.js" />
+    <Content Include="Scripts\app\common\services\dogService.js" />
     <Content Include="Scripts\app\common\services\ownerService.js" />
     <Content Include="Scripts\app\common\services\pendingWalksService.js" />
     <Content Include="Scripts\app\common\services\upcomingWalksService.js" />
     <Content Include="Scripts\app\common\services\userAuthService.js" />
+    <Content Include="Scripts\app\common\services\walkerReviewService.js" />
     <Content Include="Scripts\app\common\services\walkerService.js" />
     <Content Include="Scripts\app\dashboard\dashboard.state.js" />
     <Content Include="Scripts\app\dashboard\dashboard.template.html" />
