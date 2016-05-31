@@ -212,6 +212,12 @@
     <Content Include="Scripts\app\dashboard\dashboard.state.js" />
     <Content Include="Scripts\app\dashboard\dashboard.template.html" />
     <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
+    <Content Include="Scripts\app\dashboard\dashboardOwner.controller.js" />
+    <Content Include="Scripts\app\dashboard\dashboardOwner.state.js" />
+    <Content Include="Scripts\app\dashboard\dashboardOwner.template.html" />
+    <Content Include="Scripts\app\dashboard\dashboardWalker.controller.js" />
+    <Content Include="Scripts\app\dashboard\dashboardWalker.state.js" />
+    <Content Include="Scripts\app\dashboard\dashboardWalker.template.html" />
     <Content Include="Scripts\app\newUser\newUser.controller.js" />
     <Content Include="Scripts\app\newUser\newUser.state.js" />
     <Content Include="Scripts\app\newUser\newUser.template.html" />
