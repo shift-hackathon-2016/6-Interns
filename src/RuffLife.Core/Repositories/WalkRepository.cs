@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RuffLife.Core.Repositories.Interfaces;
 
 namespace RuffLife.Core.Repositories
 {
-    class WalkRepository
+    public class WalkRepository : IWalkRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public WalkRepository(RuffLifeContext context)
@@ -38,6 +39,7 @@ namespace RuffLife.Core.Repositories
                 .Include("Walkers")
                 .Include("Dogs")
                 .FirstOrDefault(x => x.Id == updatedWalk.Id);
+            if (walk == null) return;
 
             walk.Price = updatedWalk.Price;
             walk.Walker = updatedWalk.Walker;
@@ -77,6 +79,11 @@ namespace RuffLife.Core.Repositories
                 .ToList();
 
             return walks;
+        }
+
+        public void Dispose()
+        {
+            _ruffLifeContext.Dispose();
         }
     }
 }

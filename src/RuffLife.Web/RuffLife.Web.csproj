@@ -192,6 +192,7 @@
     <Compile Include="Controllers\API\ReviewForDogController.cs" />
     <Compile Include="Controllers\API\ReviewForWalkerController.cs" />
     <Compile Include="Controllers\API\WalkerController.cs" />
+    <Compile Include="Controllers\API\WalkOfferController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
