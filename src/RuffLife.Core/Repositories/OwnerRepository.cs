@@ -32,13 +32,13 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext.SaveChanges();
         }
 
-        public IList<Owner> GetAllOwners()
+        public IList<ViewOwnerDto> GetAllOwners()
         {
             var owners = _ruffLifeContext.Owners
                 .Include("Dogs")
                 .ToList();
 
-            return owners;
+            return owners.Select(owner => Mapper.Map<ViewOwnerDto>(owner)).ToList();
         }
 
         public void Dispose()

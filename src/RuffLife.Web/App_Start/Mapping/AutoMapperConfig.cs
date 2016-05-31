@@ -4,6 +4,7 @@ using RuffLife.Core.Repositories;
 using RuffLife.Data.Models;
 using AutoMapper;
 using RuffLife.Core.Models.Walk;
+using RuffLife.Data.Context;
 
 namespace RuffLife.Web.Mapping
 {
@@ -25,11 +26,13 @@ namespace RuffLife.Web.Mapping
         public static void Configure()
         {
 #pragma warning disable 618
+            Mapper.CreateMap<RuffLifeContext, RuffLifeContext>();
 
-            Mapper.CreateMap<Owner, ViewOwnerDto>();
-            Mapper.CreateMap<ViewOwnerDto, Owner>();
-            Mapper.CreateMap<Walker, ViewWalkerDto>();
-            Mapper.CreateMap<Walk, ViewWalkDto>();
+            Mapper.CreateMap<Owner, ViewOwnerDto>().IgnoreUnmappedProperties();
+            Mapper.CreateMap<ViewOwnerDto, Owner>().IgnoreUnmappedProperties();
+
+            Mapper.CreateMap<Walker, ViewWalkerDto>().IgnoreUnmappedProperties();
+            Mapper.CreateMap<Walk, ViewWalkDto>().IgnoreUnmappedProperties();
         }
     }
 }
