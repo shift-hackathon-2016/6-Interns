@@ -8,14 +8,16 @@ function OwnerService($http, $q) {
     var owners;
 
     function getAllOwners() {
-        $http.get('http://localhost:2493/api/owners/get-all').then(function (response) {
+        $http.get('/api/owners/get-all').then(function (response) {
             owners = response.data;
         });
     };
     getAllOwners();
 
     function addOwner(owner) {
-        owners.push(owner);
+        $http.post('/api/owners/create', owner).then(function () {
+            owners.push(owner);
+        });
     };
 
     return {
