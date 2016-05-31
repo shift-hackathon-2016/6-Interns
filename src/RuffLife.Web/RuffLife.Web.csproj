@@ -200,6 +200,10 @@
     </Content>
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\dashboard\dashboard.state.js" />
+    <Content Include="Scripts\app\dashboard\dashboard.template.html" />
+    <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
+    <Content Include="Scripts\app\repositories\userRepository.js" />
     <Content Include="Scripts\app\signIn\signIn.controller.js" />
     <Content Include="Scripts\app\signIn\signIn.state.js" />
     <Content Include="Scripts\app\signIn\signIn.template.html" />
