@@ -1,1 +1,8 @@
 ﻿{{vm.text}}
+
+<button class="btn btn-default" ng-click="vm.userType = 'owner'">I'm a owner</button>
+<button class="btn btn-default" ng-click="vm.userType = 'walker'">I'm a walker</button>
+{{vm.userType}}
+
+<br />
+<button class="btn btn-primary" ng-click="vm.continue()">Next</button>
