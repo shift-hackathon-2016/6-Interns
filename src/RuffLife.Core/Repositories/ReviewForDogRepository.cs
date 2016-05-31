@@ -35,8 +35,8 @@ namespace RuffLife.Core.Repositories
         public void UpdateReviewForDog(UpdateReviewForDogDto updatedReviewForDog)
         {
             var reviewForDog = _ruffLifeContext.ReviewsForDogs
-                .Include("Walkers")
-                .Include("Dogs")
+                .Include("Walker")
+                .Include("Dog")
                 .FirstOrDefault(x => x.Id == updatedReviewForDog.Id);
 
             reviewForDog.Grade = updatedReviewForDog.Grade;
