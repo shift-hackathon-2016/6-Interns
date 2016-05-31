@@ -1,8 +1,7 @@
-﻿using RuffLife.Core.Models.Owner;
+﻿using AutoMapper;
+using RuffLife.Core.Models.Owner;
 using RuffLife.Core.Models.Walker;
-using RuffLife.Core.Repositories;
 using RuffLife.Data.Models;
-using AutoMapper;
 using RuffLife.Core.Models.Walk;
 using RuffLife.Data.Context;
 
@@ -30,6 +29,7 @@ namespace RuffLife.Web.Mapping
 
             Mapper.CreateMap<Owner, ViewOwnerDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<ViewOwnerDto, Owner>().IgnoreUnmappedProperties();
+
 
             Mapper.CreateMap<Walker, ViewWalkerDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<Walk, ViewWalkDto>().IgnoreUnmappedProperties();
