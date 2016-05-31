@@ -31,9 +31,10 @@ namespace RuffLife.Web.Controllers.API
 
         [Route("get-reviews/{dogId}")]
         [HttpGet]
-        public void GetReviewsForDogByDog(int dogId)
+        public IHttpActionResult GetReviewsForDogByDog(int dogId)
         {
-            _reviewForDogService.GetReviewsForDogByDog(dogId);
+            var reviewsForDogs = _reviewForDogService.GetReviewsForDogByDog(dogId);
+            return Ok(reviewsForDogs);
         }
     }
 }
