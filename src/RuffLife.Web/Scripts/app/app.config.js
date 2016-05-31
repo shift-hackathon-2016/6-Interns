@@ -1,9 +1,9 @@
 ﻿'use strict';
 
-angular.module('app').config(AppConfig)
+angular.module('app').config(AppConfig);
 
-AppConfig.$inject = ['$urlRouterProvider', '$stateProvider']
+AppConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
 
-function AppConfig($urlRouterProvider) {
+function AppConfig($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/sign-in');
 }
