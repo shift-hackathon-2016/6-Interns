@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using RuffLife.Core.Models.ReviewForWalker;
+using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Repositories
 {
-    class ReviewForWalkerRepository
+    class ReviewForWalkerRepository : IReviewForWalkerRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public ReviewForWalkerRepository(RuffLifeContext context)
@@ -54,6 +55,11 @@ namespace RuffLife.Core.Repositories
                 .ToList();
 
             return reviewsForWalkers;
+        }
+
+        public void Dispose()
+        {
+            _ruffLifeContext.Dispose();
         }
     }
 }
