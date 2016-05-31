@@ -26,9 +26,9 @@ namespace RuffLife.Core.Services
             _ownerRepository.CreateOwner(Mapper.Map<Owner>(owner));
         }
 
-        public IList<ViewOwnerDto> GetAllOwners()
+        public IList<Owner> GetAllOwners()
         {
-            throw new NotImplementedException();
+            return _ownerRepository.GetAllOwners();
         }
 
         public void Dispose()

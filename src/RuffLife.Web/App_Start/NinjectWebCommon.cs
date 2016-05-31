@@ -1,3 +1,5 @@
+using System.Web.Http;
+using Ninject.Web.WebApi;
 using RuffLife.Core.Repositories;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Core.Services;
@@ -52,6 +54,9 @@ namespace RuffLife.Web
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+
                 return kernel;
             }
             catch

@@ -9,6 +9,6 @@ namespace RuffLife.Core.Repositories.Interfaces
     public interface IOwnerRepository : IDisposable
     {
         void CreateOwner(Owner newOwner);
-        IList<ViewOwnerDto> GetAllOwners();
+        IList<Owner> GetAllOwners();
     }
 }

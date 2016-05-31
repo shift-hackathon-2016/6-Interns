@@ -3,7 +3,7 @@ using RuffLife.Core.Services.Interfaces;
 
 namespace RuffLife.Web.Controllers.API
 {
-    [RoutePrefix("owners")]
+    [RoutePrefix("api/owners")]
     public class OwnerController : ApiController
     {
         public readonly IOwnerService _ownerService;
@@ -13,7 +13,7 @@ namespace RuffLife.Web.Controllers.API
             _ownerService = ownerService;
         }
 
-        [Route("/get-all")]
+        [Route("get-all")]
         [HttpGet]
         public IHttpActionResult GetAllUSers()
         {
