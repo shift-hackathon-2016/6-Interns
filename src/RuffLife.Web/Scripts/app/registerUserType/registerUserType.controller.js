@@ -2,9 +2,9 @@
 
 angular.module('app').controller('registerUserTypeController', RegisterUserTypeController);
 
-RegisterUserTypeController.$inject = ['$state', 'userAuthService'];
+RegisterUserTypeController.$inject = ['$state', '$rootScope'];
 
-function RegisterUserTypeController($state, userAuthService) {
+function RegisterUserTypeController($state, $rootScope) {
     var vm = this;
 
     vm.text = 'Hello user';
@@ -12,8 +12,7 @@ function RegisterUserTypeController($state, userAuthService) {
     vm.userType;
 
     vm.continue = function () {
-        userAuthService.setNewUserType(vm.userType).then(function () {
-            return $state.go('newUser');
-        });
+        $rootScope.userType = vm.userType;
+        return $state.go('newUser');
     }
 };

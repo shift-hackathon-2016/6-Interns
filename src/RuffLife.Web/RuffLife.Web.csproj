@@ -206,7 +206,9 @@
     </Content>
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\services\ownerService.js" />
     <Content Include="Scripts\app\common\services\userAuthService.js" />
+    <Content Include="Scripts\app\common\services\walkerService.js" />
     <Content Include="Scripts\app\dashboard\dashboard.state.js" />
     <Content Include="Scripts\app\dashboard\dashboard.template.html" />
     <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
