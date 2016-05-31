@@ -1,1 +1,8 @@
 ﻿<h1>Walker</h1>
+
+<div ng-repeat="walk in vm.user.walk">
+    <span>{{walk.startTime | date:'dd-MM-yyyy'}}</span>
+    <span>{{walk.startTime | date:'HH:mm'}} - {{walk.endTime | date:'HH:mm'}}</span>
+    <p>{{walk.location}}</p>
+    <p>{{walk.price}}</p>
+</div>
