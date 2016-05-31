@@ -189,6 +189,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\OwnerController.cs" />
+    <Compile Include="Controllers\API\ReviewForDogController.cs" />
+    <Compile Include="Controllers\API\ReviewForWalkerController.cs" />
     <Compile Include="Controllers\API\WalkerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
