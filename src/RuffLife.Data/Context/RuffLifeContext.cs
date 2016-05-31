@@ -10,7 +10,7 @@ namespace RuffLife.Data.Context
         public RuffLifeContext()
             :base("RuffLifeContext")
         {
-            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
         }
 

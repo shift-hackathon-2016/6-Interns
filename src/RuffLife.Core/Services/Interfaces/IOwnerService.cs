@@ -8,6 +8,6 @@ namespace RuffLife.Core.Services.Interfaces
     public interface IOwnerService : IDisposable
     {
         void CreateOwner(CreateOwnerDto owner);
-        IList<Owner> GetAllOwners();
+        IList<ViewOwnerDto> GetAllOwners();
     }
 }
