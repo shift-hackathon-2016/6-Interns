@@ -29,7 +29,7 @@ namespace RuffLife.Web.Controllers.API
             _reviewForDogService.UpdateReviewForDog(updatedReviewForDog);
         }
 
-        [Route("get-reviews/{id}")]
+        [Route("get-reviews/{dogId}")]
         [HttpGet]
         public void GetReviewsForDogByDog(int dogId)
         {

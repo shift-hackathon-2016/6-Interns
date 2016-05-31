@@ -53,8 +53,8 @@ namespace RuffLife.Core.Repositories
         {
             var walker = _ruffLifeContext.Walkers
                 .Include("Walks")
-                .Include("ReviewsForWalker")
-                .Include("ReviewsForDogs")
+                .Include("ReviewsGiven")
+                .Include("ReviewsReceived")
                 .FirstOrDefault(x => x.Id == walkerId);
 
             return Mapper.Map<ViewWalkerDto>(walker);
