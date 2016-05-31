@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Repositories;
+using RuffLife.Data.Models;
 
 namespace RuffLife.Web.Mapping
 {
@@ -18,6 +21,9 @@ namespace RuffLife.Web.Mapping
         }
         public static void Configure()
         {
+#pragma warning disable 618
+
+            Mapper.CreateMap<Owner, ViewOwnerDto>();
         }
     }
 }
