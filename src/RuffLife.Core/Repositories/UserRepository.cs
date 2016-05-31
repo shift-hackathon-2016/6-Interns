@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using RuffLife.Core.Models.Owner;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
+using RuffLife.Core.Models.Owner;
 
 namespace RuffLife.Core.Repositories
 {
