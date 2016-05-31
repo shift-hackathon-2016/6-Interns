@@ -26,6 +26,7 @@ namespace RuffLife.Web.Mapping
 
             Mapper.CreateMap<Owner, ViewOwnerDto>();
             Mapper.CreateMap<Walker, ViewWalkerDto>();
+            Mapper.CreateMap<Walk, ViewWalkerDto>();
         }
     }
 }
