@@ -22,9 +22,9 @@ namespace RuffLife.Web.Controllers.API
         [HttpGet]
         public IHttpActionResult GetSingleWalker(int id)
         {
-            var user = _walkerService.GetWalker(id);
-            if (user != null)
-                return Ok(user);
+            var walker = _walkerService.GetWalker(id);
+            if (walker != null)
+                return Ok(walker);
             return BadRequest("Walker with that Id doesnt exist");
         }
     }

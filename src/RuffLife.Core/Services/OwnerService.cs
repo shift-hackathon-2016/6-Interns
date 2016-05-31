@@ -31,6 +31,11 @@ namespace RuffLife.Core.Services
             return _ownerRepository.GetAllOwners();
         }
 
+        public ViewOwnerDto GetOwner(int ownerId)
+        {
+            return _ownerRepository.GetOwner(ownerId);
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();

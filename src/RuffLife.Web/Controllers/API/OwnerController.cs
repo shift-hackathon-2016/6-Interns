@@ -28,5 +28,15 @@ namespace RuffLife.Web.Controllers.API
         {
             _ownerService.CreateOwner(owner);
         }
+
+        [Route("get-single/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetSingleOwner(int id)
+        {
+            var owner = _ownerService.GetOwner(id);
+            if (owner != null)
+                return Ok(owner);
+            return BadRequest("Owner with that Id doesnt exist");
+        }
     }
 }
