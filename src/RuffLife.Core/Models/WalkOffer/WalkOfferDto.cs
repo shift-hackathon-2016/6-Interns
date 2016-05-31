@@ -1,8 +1,9 @@
-﻿using data = RuffLife.Data.Models;
+﻿using RuffLife.Core.Models.Walk;
+
 namespace RuffLife.Core.Models.WalkOffer
 {
     public class CreateWalkOfferDto
     {
-        public data.Walk Walk { get; set; }
+        public CreateWalkDto Walk { get; set; }
     }
 }

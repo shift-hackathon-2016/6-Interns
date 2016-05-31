@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
@@ -26,7 +27,7 @@ namespace RuffLife.Core.Repositories
             var offer = new WalkOffer()
             {
                 IsActive = true,
-                Walk = walkOffer.Walk
+                Walk = Mapper.Map<Walk>(walkOffer.Walk)
             };
 
             _ruffLifeContext.WalkOffers.Add(offer);
