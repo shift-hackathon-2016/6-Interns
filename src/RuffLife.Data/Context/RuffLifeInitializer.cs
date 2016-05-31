@@ -11,15 +11,6 @@ namespace RuffLife.Data.Context
     {
         protected override void Seed(RuffLifeContext context)
         {
-            var dogs = new List<Dog>
-            {
-                new Dog { Name = "Dota", Breed = "Jack Russell", Age = "7", Gender = 'F' },
-                new Dog { Name = "Alba", Breed = "Jack Russell", Age = "2", Gender = 'F' },
-                new Dog { Name = "Vau", Breed = "Labrador", Age = "5", Gender = 'M' }
-            };
-            dogs.ForEach(x => context.Dogs.Add(x));
-            context.SaveChanges();
-
             var owners = new List<Owner>
             {
                 new Owner { Username = "Andrea", Location = "Split", Address = "Fra Luje Maruna 5", ContactNumber = "095", Email = "andrea@dump.hr" },
@@ -27,6 +18,15 @@ namespace RuffLife.Data.Context
                 new Owner { Username = "Nikola", Location = "Split", Address = "Nikolina adresa", ContactNumber = "095", Email = "nikola@dump.hr" }
             };
             owners.ForEach(x => context.Owners.Add(x));
+            context.SaveChanges();
+
+            var dogs = new List<Dog>
+            {
+                new Dog { Name = "Dota", Breed = "Jack Russell", Age = "7", Gender = 'F', Owner = context.Owners.FirstOrDefault(x => x.Username == "Andrea") },
+                new Dog { Name = "Alba", Breed = "Jack Russell", Age = "2", Gender = 'F', Owner = context.Owners.FirstOrDefault(x => x.Username == "Nikola") },
+                new Dog { Name = "Vau", Breed = "Labrador", Age = "5", Gender = 'M', Owner = context.Owners.FirstOrDefault(x => x.Username == "Mirko") }
+            };
+            dogs.ForEach(x => context.Dogs.Add(x));
             context.SaveChanges();
 
             var walkers = new List<Walker>

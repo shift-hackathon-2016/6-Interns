@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using RuffLife.Core.Repositories.Interfaces;
+using RuffLife.Core.Services.Interfaces;
 
 namespace RuffLife.Core.Repositories
 {
-    class WalkerRepository
+    public class WalkerRepository : IWalkerRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public WalkerRepository(RuffLifeContext context)
@@ -55,6 +57,11 @@ namespace RuffLife.Core.Repositories
                 .FirstOrDefault(x => x.Id == walkerId);
 
             return Mapper.Map<ViewWalkerDto>(walker);
+        }
+
+        public void Dispose()
+        {
+            _ruffLifeContext.Dispose();
         }
     }
 }
