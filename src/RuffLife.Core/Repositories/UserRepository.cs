@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
+using AutoMapper;
 using RuffLife.Core.Models.Owner;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
@@ -30,12 +32,14 @@ namespace RuffLife.Core.Repositories
             await  _ruffLifeContext.SaveChangesAsync();
         }
 
-        public IList<Owner> GetAllOwners()
+        public IList<ViewOwnerDto> GetAllOwners()
         {
             var owners = _ruffLifeContext.Owners
-                .Include("Dogs").ToList();
+                .Include("Dogs")
+                .Select(owner => Mapper.Map<Owner, ViewOwnerDto>(owner))
+                .ToList();
 
-            return owners.ToList();
+            return owners;
         } 
     }
 }
