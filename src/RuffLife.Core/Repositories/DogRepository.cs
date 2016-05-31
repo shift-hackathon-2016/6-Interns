@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using RuffLife.Core.Models.Dog;
+using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
 using RuffLife.Data.Models;
 using System;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Repositories
 {
-    class DogRepository
+    class DogRepository : IDogRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public DogRepository(RuffLifeContext context)
@@ -28,7 +30,7 @@ namespace RuffLife.Core.Repositories
                 Gender = newDog.Gender,
                 Description = newDog.Description,
                 Notes = newDog.Notes,
-                Owner = newDog.Owner
+                Owner = Mapper.Map<Owner>(newDog.Owner)
             };
             _ruffLifeContext.Dogs.Add(dog);
             _ruffLifeContext.SaveChanges();
@@ -95,6 +97,11 @@ namespace RuffLife.Core.Repositories
                 .ToList();
 
             return dogs;
+        }
+
+        public void Dispose()
+        {
+            _ruffLifeContext.Dispose();
         }
     }
 }

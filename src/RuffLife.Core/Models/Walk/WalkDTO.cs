@@ -1,4 +1,5 @@
-﻿using data = RuffLife.Data.Models;
+﻿using RuffLife.Core.Models.Dog;
+using RuffLife.Core.Models.Walker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,14 @@ namespace RuffLife.Core.Models.Walk
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Location { get; set; }
-        public virtual ICollection<data.Dog> Dogs { get; set; }
+        public virtual ICollection<ViewDogDto> Dogs { get; set; }
     }
 
     public class UpdateWalkDto
     {
         public int Id { get; set; }
         public double Price { get; set; }
-        public virtual data.Walker Walker { get; set; }
+        public virtual ViewWalkerDto Walker { get; set; }
     }
 
     public class ViewWalkDto
@@ -30,7 +31,7 @@ namespace RuffLife.Core.Models.Walk
         public string Location { get; set; }
         public double Price { get; set; }
 
-        public virtual data.Walker Walker { get; set; }
-        public virtual ICollection<data.Dog> Dogs { get; set; }
+        public virtual ViewWalkerDto Walker { get; set; }
+        public virtual ICollection<ViewDogDto> Dogs { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace RuffLife.Core.Services
             _walkOfferRepository.LockOffer(walkOfferToLock);
 
             var walk = _walkRepository.GetWalk(walkOfferToLock.Walk.Id);
-            walk.Walker = Mapper.Map<Walker>(walkerSelected);
+            walk.Walker = walkerSelected;
 
             _walkRepository.UpdateWalk(Mapper.Map<UpdateWalkDto>(walk));
 

@@ -9,7 +9,7 @@ using RuffLife.Core.Models.Walker;
 
 namespace RuffLife.Web.Controllers.API
 {
-    [RoutePrefix("api/walker")]
+    [RoutePrefix("api/walkers")]
     public class WalkerController : ApiController
     {
         private readonly IWalkerService _walkerService;

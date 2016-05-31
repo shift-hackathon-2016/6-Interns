@@ -25,8 +25,8 @@ namespace RuffLife.Core.Repositories
             {
                 Grade = newReviewForWalker.Grade,
                 Review = newReviewForWalker.Review,
-                Walker = newReviewForWalker.Walker,
-                Owner = newReviewForWalker.Owner
+                Walker = Mapper.Map<Walker>(newReviewForWalker.Walker),
+                Owner = Mapper.Map<Owner>(newReviewForWalker.Owner)
             };
             _ruffLifeContext.ReviewsForWalkers.Add(reviewForWalker);
             _ruffLifeContext.SaveChanges();
