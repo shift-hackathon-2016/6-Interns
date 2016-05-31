@@ -2,8 +2,23 @@
 
 angular.module('app').controller('signInController', SignInController);
 
-function SignInController() {
+SignInController.$inject = ['userAuthService', '$state'];
+
+function SignInController(userAuthService, $state) {
     var vm = this;
 
-    this.text = 'Hiiii';
+    vm.user = {
+        username: '',
+        password: ''
+    };
+    vm.errorMessage = '';
+
+    vm.login = function () {
+        userAuthService.isValidUser().then(function (response) {
+            if (response == 0) {
+                console.log('Success');
+                return $state.go('chooseUserType');
+            }
+        })
+    };
 };
