@@ -2,9 +2,9 @@
 
 angular.module('app').controller('dashboardOwnerController', DashboardOwnerController);
 
-DashboardOwnerController.$inject = ['ownerService'];
+DashboardOwnerController.$inject = ['ownerService', $rootScope];
 
-function DashboardOwnerController(ownerService) {
+function DashboardOwnerController(ownerService, $rootScope) {
     var vm = this;
 
     vm.isAddPet = false;
