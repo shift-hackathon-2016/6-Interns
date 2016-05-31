@@ -1,4 +1,7 @@
 ﻿<h1>Register</h1>
+
+<button class="btn btn-danger" ng-click="vm.save()">Add</button>
+<br />
 <form name="registerForm" novalidate>
     <input type="text" ng-model="vm.user.username" placeholder="Username" required /><br />
     <input type="text" ng-model="vm.user.password" placeholder="Password" required /><br />
@@ -13,5 +16,5 @@
     <textarea ng-model="vm.user.description" ng-show="vm.userType == 'walker'" required>Describe yourself</textarea>
     <textarea ng-model="v.user.experience" ng-show="vm.userType == 'walker'" required>Experience</textarea>
     <input type="number" ng-model="vm.user.charge" placeholder="Charge per hour" required />
-    <input type="submit" ng-click="vm.save()" value="Submit" ng-disabled="registerForm.$invalid" />
+    <input type="submit" ng-click="vm.save()" value="Submit" />
 </form>

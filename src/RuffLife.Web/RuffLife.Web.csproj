@@ -206,22 +206,19 @@
     </Content>
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\services\ownerService.js" />
     <Content Include="Scripts\app\common\services\userAuthService.js" />
-    <Content Include="Scripts\app\dashboard\dashboardOwner.template.html" />
-    <Content Include="Scripts\app\dashboard\dashboardWalker.template.html" />
-    <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
+    <Content Include="Scripts\app\common\services\walkerService.js" />
     <Content Include="Scripts\app\dashboard\dashboard.state.js" />
     <Content Include="Scripts\app\dashboard\dashboard.template.html" />
-    <Content Include="Scripts\app\dashboard\dashboardOwner.controller.js" />
-    <Content Include="Scripts\app\dashboard\dashboardWalker.controller.js" />
-    <Content Include="Scripts\app\dashboard\dashboardOwner.state.js" />
-    <Content Include="Scripts\app\dashboard\dashboardWalker.state.js" />
+    <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
     <Content Include="Scripts\app\newUser\newUser.controller.js" />
     <Content Include="Scripts\app\newUser\newUser.state.js" />
     <Content Include="Scripts\app\newUser\newUser.template.html" />
     <Content Include="Scripts\app\registerUserType\registerUserType.controller.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.state.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.template.html" />
+    <Content Include="Scripts\app\repositories\userRepository.js" />
     <Content Include="Scripts\app\signIn\signIn.controller.js" />
     <Content Include="Scripts\app\signIn\signIn.state.js" />
     <Content Include="Scripts\app\signIn\signIn.template.html" />
