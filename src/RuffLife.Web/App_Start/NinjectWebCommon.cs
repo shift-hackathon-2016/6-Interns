@@ -84,6 +84,10 @@ namespace RuffLife.Web
 
 
             kernel.Bind<IOwnerService>().To<OwnerService>();
+            kernel.Bind<IReviewForDogService>().To<ReviewForDogService>();
+            kernel.Bind<IReviewForWalkerService>().To<ReviewForWalkerService>();
+            kernel.Bind<IWalkerService>().To<WalkerService>();
+            kernel.Bind<IWalkOfferService>().To<WalkOfferService>();
         }        
     }
 }
