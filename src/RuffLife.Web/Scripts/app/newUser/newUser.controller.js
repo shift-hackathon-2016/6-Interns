@@ -11,6 +11,7 @@ function NewUserController($state, $rootScope, ownerService, walkerService) {
     vm.user = {};
 
     vm.save = function () {
+        console.log(vm.user);
         $rootScope.user = vm.user;
         if (vm.userType == 'owner') ownerService.addOwner(vm.user);
         else walkerService.addWalker(vm.user);

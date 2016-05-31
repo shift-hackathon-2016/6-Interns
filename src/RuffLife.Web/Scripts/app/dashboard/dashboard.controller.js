@@ -2,12 +2,11 @@
 
 angular.module('app').controller('dashboardController', DashboardController);
 
-DashboardController.$inject = ['$rootScope'];
+DashboardController.$inject = ['$rootScope', '$state'];
 
-function DashboardController($rootScope) {
+function DashboardController($rootScope, $state) {
     var vm = this;
-   
-    vm.username = 'srg';
-    console.log('Current type: ', $rootScope.userType);
-    console.log('Current user: ', $rootScope.user);
+
+    if ($rootScope.userType == 'owner') return $state.go('.owner');
+    else return $state.go('.walker');
 };
