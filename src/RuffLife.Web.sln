@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuffLife.Web", "RuffLife.Web\RuffLife.Web.csproj", "{586C5E09-00C1-4554-ADB9-968D718A4DE4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuffLife.Core", "RuffLife.Core\RuffLife.Core.csproj", "{DCC839A7-E535-4125-B0BC-45AE49033D6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuffLife.Data", "RuffLife.Data\RuffLife.Data.csproj", "{B7AB47D6-CD5B-434B-9A37-36265A8A3521}"
