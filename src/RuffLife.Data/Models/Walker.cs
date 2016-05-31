@@ -11,7 +11,7 @@ namespace RuffLife.Data.Models
         public string Username { get; set; }
         public string Location { get; set; }
         public string Email { get; set; }
-        public double CostPerHour { get; set; }
+        public double CostPerHourInHRK { get; set; }
         public string ContactNumber { get; set; }
         public string Description { get; set; }
 
