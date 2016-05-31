@@ -56,6 +56,7 @@
     <Compile Include="Models\Dog\DogDTO.cs" />
     <Compile Include="Models\Owner\OwnerDTO.cs" />
     <Compile Include="Models\ReviewForDog\ReviewForDogDTO.cs" />
+    <Compile Include="Models\ReviewForWalker\ReviewForWalkerDTO.cs" />
     <Compile Include="Models\Walker\WalkerDTO.cs" />
     <Compile Include="Models\Walk\WalkDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Repositories\Interfaces\IWalkerRepository.cs" />
     <Compile Include="Repositories\OwnerRepository.cs" />
     <Compile Include="Repositories\ReviewForDogRepository.cs" />
+    <Compile Include="Repositories\ReviewForWalkerRepository.cs" />
     <Compile Include="Services\Interfaces\IOwnerService.cs" />
     <Compile Include="Services\Interfaces\IWalkerService.cs" />
     <Compile Include="Services\OwnerService.cs" />
@@ -82,7 +84,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\ReviewForWalker\" />
     <Folder Include="Models\WalkOffer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
