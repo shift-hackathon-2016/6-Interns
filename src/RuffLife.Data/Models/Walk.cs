@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Data.Models
 {
-    class Walk:BaseModel
+    public class Walk:BaseModel
     {
         public DateTimeOffset StartTime { get; set; }
         public DateTimeOffset EndTime { get; set; }

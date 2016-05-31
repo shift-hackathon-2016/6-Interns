@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Data.Models
 {
-    class ReviewForWalker:BaseModel
+    public  class ReviewForWalker:BaseModel
     {
         public int Grade { get; set; }
         public string Review { get; set; }
