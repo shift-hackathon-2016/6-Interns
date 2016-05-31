@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RuffLife.Data.Models;
+using data = RuffLife.Data.Models;
 
 namespace RuffLife.Core.Models.Owner
 {
@@ -14,7 +14,7 @@ namespace RuffLife.Core.Models.Owner
         public string Address { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
-        public virtual ICollection<Dog> Dogs { get; set; }
+        public virtual ICollection<data.Dog> Dogs { get; set; }
     }
 
     public class ViewOwnerDto
@@ -25,7 +25,7 @@ namespace RuffLife.Core.Models.Owner
         public string Address { get; set; }
         public string ContactNumber { get; set; }
 
-        public virtual ICollection<ReviewForWalker> ReviewsGiven { get; set; }
-        public virtual ICollection<Dog> Dogs { get; set; }
+        public virtual ICollection<data.ReviewForWalker> ReviewsGiven { get; set; }
+        public virtual ICollection<data.Dog> Dogs { get; set; }
     }
 }
