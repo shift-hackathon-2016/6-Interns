@@ -29,8 +29,11 @@ function UserRepository() {
         });
     }
 
+    var currentUser = get(username);
+
     return {
         users: users,
+        currentUser: currentUser,
         get: get
     }
 
