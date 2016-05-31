@@ -17,7 +17,7 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext = context;
         }
 
-        public async void CreateOwnerAsync(CreateOwnerDto newOwner)
+        public void CreateOwner(Owner newOwner)
         {
             var owner = new Owner()
             {
@@ -30,14 +30,14 @@ namespace RuffLife.Core.Repositories
             };
 
             _ruffLifeContext.Owners.Add(owner);
-            await  _ruffLifeContext.SaveChangesAsync();
+            _ruffLifeContext.SaveChanges();
         }
 
         public IList<ViewOwnerDto> GetAllOwners()
         {
             var owners = _ruffLifeContext.Owners
                 .Include("Dogs")
-                .Select(owner => Mapper.Map<Owner, ViewOwnerDto>(owner))
+                .Select(owner => Mapper.Map<ViewOwnerDto>(owner))
                 .ToList();
 
             return owners;
