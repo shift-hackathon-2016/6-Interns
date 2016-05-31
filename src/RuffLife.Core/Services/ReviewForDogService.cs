@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Services
 {
-    class ReviewForDogService : IReviewForDogService
+    public class ReviewForDogService : IReviewForDogService
     {
         private readonly IReviewForDogRepository _reviewForDogRepository;
 

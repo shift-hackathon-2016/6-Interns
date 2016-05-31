@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Repositories
 {
-    class ReviewForDogRepository : IReviewForDogRepository
+    public class ReviewForDogRepository : IReviewForDogRepository
     {
         private readonly RuffLifeContext _ruffLifeContext;
         public ReviewForDogRepository(RuffLifeContext context)
