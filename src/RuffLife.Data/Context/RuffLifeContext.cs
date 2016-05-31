@@ -20,6 +20,7 @@ namespace RuffLife.Data.Context
         public DbSet<Walk> Walks { get; set; }
         public DbSet<ReviewForDog> ReviewsForDogs { get; set; }
         public DbSet<ReviewForWalker> ReviewsForWalkers { get; set; }
+        public DbSet<WalkOffer> WalkOffers { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
