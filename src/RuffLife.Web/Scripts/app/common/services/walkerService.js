@@ -8,17 +8,20 @@ function WalkerService($http, $q) {
     var walkers;
 
     function getAllWalkers() {
-        $http.get('http://localhost:2493/api/walkers/get-all').then(function (response) {
+        $http.get('/api/walkers/get-all').then(function (response) {
             walkers = response.data;
         });
     };
     getAllWalkers();
 
     function addWalker(walker) {
-        walkers.push(walker);
+        $http.post('/api/walkers/create', walker).then(function () {
+            walkers.push(walker);
+        });
     };
 
     return {
-        walkers: walkers
+        walkers: walkers,
+        addWalker: addWalker
     };
 };
