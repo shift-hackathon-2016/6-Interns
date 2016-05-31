@@ -2,9 +2,9 @@
 
 angular.module('app').controller('dashboardWalkerController', DashboardWalkerController);
 
-DashboardWalkerController.$inject = ['userAuthService', 'ownerService'];
+DashboardWalkerController.$inject = ['userAuthService', 'ownerService', 'pendingWalksService', 'upcomingWalksService', '$scope'];
 
-function DashboardWalkerController(userAuthService, ownerService) {
+function DashboardWalkerController(userAuthService, ownerService, pendingWalksService, upcomingWalksService, $scope) {
     var vm = this;
 
     vm.user = {
@@ -27,5 +27,9 @@ function DashboardWalkerController(userAuthService, ownerService) {
         }]
     };
     
-    
+    vm.pendingWalks = pendingWalksService.pendingWalks;
+
+    vm.upcomingWalks = upcomingWalksService.upcomingWalks;
+    console.log('pending: ', vm.pendingWalks);
+    console.log('upcoming: ', vm.upcomingWalks);
 };
