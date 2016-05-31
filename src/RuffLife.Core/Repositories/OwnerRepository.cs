@@ -36,6 +36,7 @@ namespace RuffLife.Core.Repositories
         {
             var owners = _ruffLifeContext.Owners
                 .Include("Dogs")
+                .Include("ReviewsGiven")
                 .ToList();
 
             return owners.Select(owner => Mapper.Map<ViewOwnerDto>(owner)).ToList();
