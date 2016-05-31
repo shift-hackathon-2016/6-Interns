@@ -43,7 +43,7 @@ namespace RuffLife.Core.Repositories
                 .Select(walker => Mapper.Map<ViewWalkerDto>(walker))
                 .ToList();
 
-            return walkers.ToList();
+            return walkers;
         }
 
         public ViewWalkerDto GetWalker(int walkerId)

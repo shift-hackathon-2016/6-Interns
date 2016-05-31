@@ -1,4 +1,4 @@
-﻿using RuffLife.Data.Models;
+﻿using data = RuffLife.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +27,8 @@ namespace RuffLife.Core.Models.Walker
         public string ContactNumber { get; set; }
         public string Description { get; set; }
 
-        public virtual ICollection<ReviewForDog> ReviewsGiven { get; set; }
-        public virtual ICollection<ReviewForWalker> ReviewsReceived { get; set; }
-        public virtual ICollection<Walk> Walks { get; set; }
+        public virtual ICollection<data.ReviewForDog> ReviewsGiven { get; set; }
+        public virtual ICollection<data.ReviewForWalker> ReviewsReceived { get; set; }
+        public virtual ICollection<data.Walk> Walks { get; set; }
     }
 }
