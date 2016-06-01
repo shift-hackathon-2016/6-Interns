@@ -1,10 +1,13 @@
-﻿using System;
+﻿using RuffLife.Core.Models.Walk;
+using System;
 using System.Collections.Generic;
-using RuffLife.Core.Models.Walk;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RuffLife.Core.Repositories.Interfaces
+namespace RuffLife.Core.Services.Interfaces
 {
-    public interface IWalkRepository : IDisposable
+    public interface IWalkService : IDisposable
     {
         void CreateWalk(CreateWalkDto newWalk);
         void UpdateWalk(UpdateWalkDto updatedWalk);
@@ -12,5 +15,4 @@ namespace RuffLife.Core.Repositories.Interfaces
         IList<ViewWalkDto> GetWalksByWalker(int walkerId);
         IList<ViewWalkDto> GetWalksByDog(int dogId);
     }
-
 }
