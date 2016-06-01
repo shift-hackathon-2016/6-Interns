@@ -1,4 +1,5 @@
 ﻿using RuffLife.Core.Models.Walk;
+using RuffLife.Core.Models.Walker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace RuffLife.Core.Services.Interfaces
         ViewWalkDto GetWalk(int walkId);
         IList<ViewWalkDto> GetWalksByWalker(int walkerId);
         IList<ViewWalkDto> GetWalksByDog(int dogId);
+        IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId);
     }
 }

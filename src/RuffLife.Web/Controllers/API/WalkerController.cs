@@ -72,5 +72,13 @@ namespace RuffLife.Web.Controllers.API
             var walks = _walkService.GetWalksByWalker(walkerId);
             return Ok(walks);
         }
+
+        [Route("{walkerId}/activeOffers")]
+        [HttpGet]
+        public IHttpActionResult GetActiveOffers(int walkerId)
+        {
+            var walks = _walkService.GetActiveOffersForWalker(walkerId);
+            return Ok(walks);
+        }
     }
 }

@@ -29,9 +29,9 @@ namespace RuffLife.Core.Services
             _walkOfferRepository.CreateWalkOffer(newWalkOffer);
         }
 
-        public void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer)
+        public void LockWalkOffer(int walkOfferId)
         {
-
+            _walkOfferRepository.LockWalkOffer(walkOfferId);
         }
 
         public IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId)

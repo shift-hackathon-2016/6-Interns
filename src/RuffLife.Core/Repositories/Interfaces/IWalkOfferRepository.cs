@@ -10,7 +10,7 @@ namespace RuffLife.Core.Repositories.Interfaces
     public interface IWalkOfferRepository : IDisposable
     {
         void CreateWalkOffer(CreateWalkOfferDto newWalkOffer);
-        void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer);
+        void LockWalkOffer(int WalkOfferId);
         IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId);
     }
 }

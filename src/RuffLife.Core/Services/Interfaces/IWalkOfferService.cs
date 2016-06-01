@@ -9,7 +9,7 @@ namespace RuffLife.Core.Services.Interfaces
     public interface IWalkOfferService : IDisposable
     {
         void CreateWalkOffer(CreateWalkOfferDto newWalkOffer);
-        void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer);
+        void LockWalkOffer(int walkOfferId);
         IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId);
     }
 }
