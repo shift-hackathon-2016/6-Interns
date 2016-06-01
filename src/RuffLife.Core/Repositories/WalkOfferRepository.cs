@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Data.Context;
@@ -21,51 +20,40 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext = ruffLifeContext;
         }
 
-        //Creates offer in Db with Walk field and empty Walkoffer field
-        //Then returns created offer
-        public WalkOffer CreateWalkOffer(CreateWalkOfferDto walkOffer)
+        public void CreateWalkOffer(CreateWalkOfferDto newWalkOffer)
         {
-            var offer = new WalkOffer()
+            var walkOffer = new WalkOffer()
             {
                 IsActive = true,
-                Walk = Mapper.Map<Walk>(walkOffer.Walk)
+                Walk = Mapper.Map<Walk>(newWalkOffer.Walk),
+                Walker = Mapper.Map<Walker>(newWalkOffer.Walker)
             };
 
-            _ruffLifeContext.WalkOffers.Add(offer);
+            _ruffLifeContext.WalkOffers.Add(walkOffer);
             _ruffLifeContext.SaveChanges();
-            return _ruffLifeContext.WalkOffers.FirstOrDefault(o => o.Walk == offer.Walk);
         }
 
-        //adds user on offer
-        public void VoteOnOffer(ViewWalkerDto walkerThatVoted, WalkOffer votedOffer)
+        public void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer)
         {
-            var walkOffer = _ruffLifeContext.WalkOffers.FirstOrDefault(o => o.Id == votedOffer.Id);
-            if (walkOffer == null || !walkOffer.IsActive) return;
-
-            var walker = _ruffLifeContext.Walkers.FirstOrDefault(w => w.Id == walkerThatVoted.Id);
-            if (walker == null) return;
-
-            walkOffer.Walker.Add(walker);
-            _ruffLifeContext.SaveChanges();
-
-        }
-
-        public void LockOffer(WalkOffer walkOfferToLock)
-        {
-            var walkOffer = _ruffLifeContext.WalkOffers.FirstOrDefault(o => o.Id == walkOfferToLock.Id);
-            if (walkOffer == null) return;
+            var walkOffer = _ruffLifeContext.WalkOffers
+                .Include("Walker")
+                .Include("Walk")
+                .FirstOrDefault(x => x.Id == updatedWalkOffer.Id);
 
             walkOffer.IsActive = false;
 
             _ruffLifeContext.SaveChanges();
         }
 
-        public WalkOffer GetOfferFromRepo(int walkOfferId)
+        public IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId)
         {
-            var walkOffer = _ruffLifeContext.WalkOffers
-                .Include("Walkers")
-                .FirstOrDefault(o => o.Id == walkOfferId);
-            return walkOffer;
+            var walkOffers = _ruffLifeContext.WalkOffers
+                .Include("Walker")
+                .Include("Walk")
+                .Where(x => x.Walk.Id == walkId)
+                .ToList();
+
+            return walkOffers.Select(walkOffer => Mapper.Map<ViewWalkOfferDto>(walkOffer)).ToList();
         }
 
         public void Dispose()

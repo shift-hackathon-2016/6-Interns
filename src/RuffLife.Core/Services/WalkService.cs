@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RuffLife.Core.Services
 {
-    class WalkService : IWalkService
+    public class WalkService : IWalkService
     {
         private readonly IWalkRepository _walkRepository;
 
