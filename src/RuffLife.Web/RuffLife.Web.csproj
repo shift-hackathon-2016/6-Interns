@@ -228,7 +228,9 @@
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\directives\dashboard\dashboard.pending.walk.directive.js" />
+    <Content Include="Scripts\app\common\directives\dashboard\dashboard.upcoming.walk.directive.js" />
     <Content Include="Scripts\app\common\directives\dashboard\pending.walk.template.html" />
+    <Content Include="Scripts\app\common\directives\dashboard\upcoming.walk.template.html" />
     <Content Include="Scripts\app\common\services\dogReviewService.js" />
     <Content Include="Scripts\app\common\services\dogService.js" />
     <Content Include="Scripts\app\common\services\ownerService.js" />
