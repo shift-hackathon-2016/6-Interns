@@ -12,7 +12,7 @@ function OrderedDogWalksService($http, $q) {
         upcomingWalks.push(walk);
     };*/
 
-    function getUpcomingWalks() {
+    function getOrderedWalks() {
         return $q.resolve(orderedWalks);
     };
 
@@ -27,7 +27,7 @@ function OrderedDogWalksService($http, $q) {
 
     return {
         orderedWalks: orderedWalks,
-        getUpcomingWalks: getUpcomingWalks,
+        getOrderedWalks: getOrderedWalks,
         getCurrentWalk: getCurrentWalk,
         //addUpcomingWalk: addUpcomingWalk
     };

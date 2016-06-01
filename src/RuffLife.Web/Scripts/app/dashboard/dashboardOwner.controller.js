@@ -25,12 +25,12 @@ function DashboardOwnerController(ownerService, orderedDogWalksService, pastDogW
         }]
     };
 
-    //vm.upcomingWalks = orderedDogWalksService.getUpcomingWalks();
-    //console.log(vm.upcomingWalks);
-    //vm.currentWalk = orderedDogWalksService.getCurrentWalk();
-    //console.log(vm.currentWalk);
-    //vm.pastWalks = pastDogWalksService.getPastWalks();
-    //console.log(vm.pastWalks);
+    vm.orderedWalks = orderedDogWalksService.getOrderedWalks();
+    console.log(vm.orderedWalks);
+    vm.currentWalk = orderedDogWalksService.getCurrentWalk();
+    console.log(vm.currentWalk);
+    vm.pastWalks = pastDogWalksService.getPastWalks();
+    console.log(vm.pastWalks);
 
     vm.walkOrder = function () {
 

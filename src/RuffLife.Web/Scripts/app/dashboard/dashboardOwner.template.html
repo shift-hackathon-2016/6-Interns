@@ -1,11 +1,10 @@
 ﻿<h1>Owner</h1>
 
 <div ng-repeat="pet in vm.user.pet">
-    <img src="{{vm.user.pet.petImage}}" alt="pet"/>
     <p>{{vm.user.pet.petName}}</p>
     <button ng-click="vm.walkOrder()" >Walk me!</button>
     <br />
-    <!--<h2>Past walks</h2>
+    <h2>Past walks</h2>
     <div ng-repeat="pastWalk in vm.pastWalks">
         <span>{{pastWalk.startTime | date:'dd-MM-yyyy'}}</span>
         <span>{{pastWalk.startTime | date:'HH:mm'}} - {{pastWalk.endTime | date:'HH:mm'}}</span>
@@ -24,14 +23,14 @@
     </div>
     <br />
     <h2>Ordered walks</h2>
-    <div>
-        <span>{{upcomingWalk.startTime | date:'dd-MM-yyyy'}}</span>
-        <span>{{upcomingWalk.startTime | date:'HH:mm'}} - {{upcomingWalk.endTime | date:'HH:mm'}}</span>
-        <p>{{upcomingWalk.location}}</p>
-        <p>{{upcomingWalk.price}}</p>
-        <p>{{upcomingWalk.walker.username}}</p>
+    <div ng-repeat="orderedWalk in vm.orderedWalks">
+        <span>{{orderedWalk.startTime | date:'dd-MM-yyyy'}}</span>
+        <span>{{orderedWalk.startTime | date:'HH:mm'}} - {{orderedWalk.endTime | date:'HH:mm'}}</span>
+        <p>{{orderedWalk.location}}</p>
+        <p>{{orderedWalk.price}}</p>
+        <p>{{orderedWalk.walker.username}}</p>
     </div>
-    <br />-->
+    <br />
 </div>
 
 <button ng-click="vm.isAddPet = !vm.isAddPet">Add new pet</button>
