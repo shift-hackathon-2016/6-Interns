@@ -20,8 +20,13 @@ function OwnerService($http, $q) {
         });
     };
 
+    function addDog(dog, id) {
+        return $http.post('/api/owners/get/' + id + '/dogs/create', dog);
+    };
+
     return {
         owners: owners,
-        addOwner: addOwner
+        addOwner: addOwner,
+        addDog: addDog
     };
 };

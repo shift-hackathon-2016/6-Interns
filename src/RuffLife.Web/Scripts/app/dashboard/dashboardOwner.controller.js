@@ -38,6 +38,11 @@ function DashboardOwnerController(ownerService, orderedDogWalksService, pastDogW
 
     vm.save = function () {
         vm.isAddPet = false;
-        //dog.push();
+        console.log($rootScope.user);
+        var id = $rootScope.user.Id;
+        ownerService.addDog(vm.dog, id).then(function () {
+            $rootScope.user.Dogs.push(vm.dog);
+            console.log($rootScope.user);
+        });
     };
 };
