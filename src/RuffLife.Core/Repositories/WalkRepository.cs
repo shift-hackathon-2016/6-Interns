@@ -36,7 +36,7 @@ namespace RuffLife.Core.Repositories
         public void UpdateWalk(UpdateWalkDto updatedWalk)
         {
             var walk = _ruffLifeContext.Walks
-                .Include("Walkers")
+                .Include("Walker")
                 .Include("Dogs")
                 .FirstOrDefault(x => x.Id == updatedWalk.Id);
             if (walk == null) return;
@@ -50,7 +50,7 @@ namespace RuffLife.Core.Repositories
         public ViewWalkDto GetWalk(int walkId)
         {
             var walk = _ruffLifeContext.Walks
-                .Include("Walkers")
+                .Include("Walker")
                 .Include("Dogs")
                 .FirstOrDefault(x => x.Id == walkId);
 
@@ -60,25 +60,23 @@ namespace RuffLife.Core.Repositories
         public IList<ViewWalkDto> GetWalksByWalker(int walkerId)
         {
             var walks = _ruffLifeContext.Walks
-                .Include("Walkers")
+                .Include("Walker")
                 .Include("Dogs")
                 .Where(x => x.Walker.Id == walkerId)
-                .Select(walk => Mapper.Map<ViewWalkDto>(walk))
                 .ToList();
 
-            return walks;
+            return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();
         }
 
         public IList<ViewWalkDto> GetWalksByDog(int dogId)
         {
             var walks = _ruffLifeContext.Walks
-                .Include("Walkers")
+                .Include("Walker")
                 .Include("Dogs")
                 .Where(x => x.Dogs.Any(_ => _.Id == dogId))
-                .Select(walk => Mapper.Map<ViewWalkDto>(walk))
                 .ToList();
 
-            return walks;
+            return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();
         }
 
         public void Dispose()

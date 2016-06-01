@@ -15,25 +15,11 @@ namespace RuffLife.Web.Controllers.API
             _reviewForWalkerService = reviewForWalkerService;
         }
 
-        [Route("create")]
-        [HttpPost]
-        public void CreateReviewForWalker(CreateReviewForWalkerDto newReviewForWalker)
-        {
-            _reviewForWalkerService.CreateReviewForWalker(newReviewForWalker);
-        }
-
         [Route("update/{id}")]
         [HttpPost]
         public void UpdateReviewForWalker(UpdateReviewForWalkerDto updatedReviewForWalker)
         {
             _reviewForWalkerService.UpdateReviewForWalker(updatedReviewForWalker);
-        }
-
-        [Route("get-reviews/{id}")]
-        [HttpGet]
-        public void GetReviewsForWalkerByWalker(int walkerId)
-        {
-            _reviewForWalkerService.GetReviewsForWalkerByWalker(walkerId);
         }
     }
 }

@@ -8,7 +8,7 @@ function OwnerService($http, $q) {
     var owners;
 
     function getAllOwners() {
-        $http.get('/api/owners/get-all').then(function (response) {
+        $http.get('/api/owners/all').then(function (response) {
             owners = response.data;
         });
     };
@@ -20,8 +20,13 @@ function OwnerService($http, $q) {
         });
     };
 
+    function addDog(dog, id) {
+        return $http.post('/api/owners/get/' + id + '/dogs/create', dog);
+    };
+
     return {
         owners: owners,
-        addOwner: addOwner
+        addOwner: addOwner,
+        addDog: addDog
     };
 };

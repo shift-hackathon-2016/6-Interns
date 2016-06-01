@@ -5,6 +5,7 @@ using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Core.Services.Interfaces;
 using RuffLife.Data.Models;
+using System.Collections.Generic;
 
 namespace RuffLife.Core.Services
 {
@@ -23,28 +24,20 @@ namespace RuffLife.Core.Services
             _walkerRepository = walkerRepository;
         }
 
-        public void CreateOffer(CreateWalkOfferDto createdOffer)
+        public void CreateWalkOffer(CreateWalkOfferDto newWalkOffer)
         {
-            _walkOfferRepository.CreateWalkOffer(createdOffer);
+            _walkOfferRepository.CreateWalkOffer(newWalkOffer);
         }
 
-        public void VoteOnOffer(ViewWalkerDto walkerToAdd, int walkOfferIdToUpdate)
+        public void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer)
         {
-            var walkOffer = _walkOfferRepository.GetOfferFromRepo(walkOfferIdToUpdate);
 
-            _walkOfferRepository.VoteOnOffer(walkerToAdd, walkOffer);
         }
 
-        public void LockWalkOffer(ViewWalkerDto walkerSelected, WalkOffer walkOfferToLock)
+        public IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId)
         {
-            _walkOfferRepository.LockOffer(walkOfferToLock);
 
-            var walk = _walkRepository.GetWalk(walkOfferToLock.Walk.Id);
-            walk.Walker = walkerSelected;
-
-            _walkRepository.UpdateWalk(Mapper.Map<UpdateWalkDto>(walk));
-
-
+            return _walkOfferRepository.GetWalkOffersByWalk(walkId);
         }
 
         public void Dispose()

@@ -2,15 +2,14 @@
 using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Models.WalkOffer;
 using RuffLife.Data.Models;
+using System.Collections.Generic;
 
 namespace RuffLife.Core.Services.Interfaces
 {
     public interface IWalkOfferService : IDisposable
     {
-        void CreateOffer(CreateWalkOfferDto createdOffer);
-
-        void VoteOnOffer(ViewWalkerDto walkerToAdd, int walkOfferToUpdate);
-
-        void LockWalkOffer(ViewWalkerDto walkerSelected, WalkOffer walkOfferToLock);
+        void CreateWalkOffer(CreateWalkOfferDto newWalkOffer);
+        void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer);
+        IList<ViewWalkOfferDto> GetWalkOffersByWalk(int walkId);
     }
 }

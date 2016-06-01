@@ -39,7 +39,7 @@ namespace RuffLife.Core.Repositories
         public void UpdateDog(UpdateDogDto updatedDog)
         {
             var dog = _ruffLifeContext.Dogs
-                .Include("Owners")
+                .Include("Owner")
                 .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == updatedDog.Id);
@@ -53,7 +53,7 @@ namespace RuffLife.Core.Repositories
         public ViewDogDto GetDog(int dogId)
         {
             var dog = _ruffLifeContext.Dogs
-                .Include("Owners")
+                .Include("Owner")
                 .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == dogId);
@@ -64,7 +64,7 @@ namespace RuffLife.Core.Repositories
         public void DeleteDog(int dogId)
         {
             var dog = _ruffLifeContext.Dogs
-                .Include("Owners")
+                .Include("Owner")
                 .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == dogId);
@@ -76,27 +76,25 @@ namespace RuffLife.Core.Repositories
         public IList<ViewDogDto> GetDogsByOwner(int ownerId)
         {
             var dogs = _ruffLifeContext.Dogs
-                .Include("Owners")
+                .Include("Owner")
                 .Include("ReviewsForDogs")
                 .Include("Walks")
                 .Where(x => x.Owner.Id == ownerId)
-                .Select(dog => Mapper.Map<ViewDogDto>(dog))
                 .ToList();
 
-            return dogs;
+            return dogs.Select(dog => Mapper.Map<ViewDogDto>(dog)).ToList();
         }
 
         public IList<ViewDogDto> GetDogsByWalk(int walkId)
         {
             var dogs = _ruffLifeContext.Dogs
-                .Include("Owners")
+                .Include("Owner")
                 .Include("ReviewsReceived")
                 .Include("Walks")
                 .Where(d => d.Walks.Any(w => w.Id == walkId))
-                .Select(dog => Mapper.Map<ViewDogDto>(dog))
                 .ToList();
 
-            return dogs;
+            return dogs.Select(dog => Mapper.Map<ViewDogDto>(dog)).ToList();
         }
 
         public void Dispose()

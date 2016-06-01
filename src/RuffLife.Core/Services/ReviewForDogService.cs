@@ -32,7 +32,8 @@ namespace RuffLife.Core.Services
 
         public IList<ViewReviewForDogDto> GetReviewsForDogByDog(int dogId)
         {
-            return _reviewForDogRepository.GetReviewsForDogByDog(dogId);
+            var reviewsForDogByDog = _reviewForDogRepository.GetReviewsForDogByDog(dogId);
+            return reviewsForDogByDog;
         }
 
         public void Dispose()

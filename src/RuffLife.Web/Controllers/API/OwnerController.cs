@@ -17,7 +17,7 @@ namespace RuffLife.Web.Controllers.API
             _dogService = dogService;
         }
 
-        [Route("get-all")]
+        [Route("all")]
         [HttpGet]
         public IHttpActionResult GetAllUSers()
         {
@@ -32,7 +32,7 @@ namespace RuffLife.Web.Controllers.API
             _ownerService.CreateOwner(newOwner);
         }
 
-        [Route("get-single/{id}")]
+        [Route("get/{id}")]
         [HttpGet]
         public IHttpActionResult GetSingleOwner(int id)
         {
@@ -42,7 +42,7 @@ namespace RuffLife.Web.Controllers.API
             return BadRequest("Owner with that Id doesnt exist");
         }
 
-        [Route("get-single/{ownerId}/dogs/create")]
+        [Route("get/{ownerId}/dogs/create")]
         [HttpPost]
         public void CreateDog(CreateDogDto newDog, int ownerId)
         {
@@ -50,21 +50,21 @@ namespace RuffLife.Web.Controllers.API
             _dogService.CreateDog(newDog);
         }
 
-        [Route("get-single/{ownerId}/dogs/update/{Id}")]
+        [Route("get/{ownerId}/dogs/update/{Id}")]
         [HttpPost]
         public void UpdateDog(UpdateDogDto updatedDog)
         {
             _dogService.UpdateDog(updatedDog);
         }
 
-        [Route("get-single/{ownerId}/dogs/delete/{Id}")]
+        [Route("get/{ownerId}/dogs/delete/{Id}")]
         [HttpPost]
         public void DeleteDog(int dogId)
         {
             _dogService.DeleteDog(dogId);
         }
 
-        [Route("get-single/{ownerId}/dogs")]
+        [Route("get/{ownerId}/dogs")]
         [HttpGet]
         public IHttpActionResult GetDogsByOwner(int ownerId)
         {

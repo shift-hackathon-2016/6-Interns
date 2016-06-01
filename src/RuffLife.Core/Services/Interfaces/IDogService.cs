@@ -11,9 +11,9 @@ namespace RuffLife.Core.Services.Interfaces
     {
         void CreateDog(CreateDogDto newDog);
         void UpdateDog(UpdateDogDto updatedDog);
-        ViewDogDto GetDog(int dogId); //ovo ide u walk offer
+        ViewDogDto GetDog(int dogId);
         void DeleteDog(int dogId);
         IList<ViewDogDto> GetDogsByOwner(int ownerId);
-        IList<ViewDogDto> GetDogsByWalk(int walkId); //ovo triba implementirat nakon walk (i ninject)
+        IList<ViewDogDto> GetDogsByWalk(int walkId);
     }
 }

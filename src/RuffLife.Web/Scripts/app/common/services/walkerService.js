@@ -8,7 +8,7 @@ function WalkerService($http, $q) {
     var walkers;
 
     function getAllWalkers() {
-        $http.get('/api/walkers/get-all').then(function (response) {
+        $http.get('/api/walkers/all').then(function (response) {
             walkers = response.data;
         });
     };

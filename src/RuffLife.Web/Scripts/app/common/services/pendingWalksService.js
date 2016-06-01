@@ -2,9 +2,9 @@
 
 angular.module('app').factory('pendingWalksService', PendingWalksService);
 
-PendingWalksService.$inject = ['$http', '$q'];
+PendingWalksService.$inject = ['$http', '$q', '$rootScope'];
 
-function PendingWalksService($http, $q) {
+function PendingWalksService($http, $q, $rootScope) {
     var pendingWalks = [{ startTime: new Date(), endTime: new Date(), location: 'Split', dog: { name: 'Cuko' } },
         { startTime: new Date(), endTime: new Date(), location: 'Kaštela', dog: { name: 'Rex' } }];
 

@@ -35,8 +35,8 @@ namespace RuffLife.Core.Repositories
         public void UpdateReviewForWalker(UpdateReviewForWalkerDto updatedReviewForWalker)
         {
             var reviewForWalker = _ruffLifeContext.ReviewsForWalkers
-                .Include("Walkers")
-                .Include("Owners")
+                .Include("Walker")
+                .Include("Owner")
                 .FirstOrDefault(x => x.Id == updatedReviewForWalker.Id);
 
             reviewForWalker.Grade = updatedReviewForWalker.Grade;
@@ -48,13 +48,12 @@ namespace RuffLife.Core.Repositories
         public IList<ViewReviewForWalkerDto> GetReviewsForWalkerByWalker(int walkerId)
         {
             var reviewsForWalkers = _ruffLifeContext.ReviewsForWalkers
-                .Include("Walkers")
-                .Include("Owners")
+                .Include("Walker")
+                .Include("Owner")
                 .Where(x => x.Walker.Id == walkerId)
-                .Select(walker => Mapper.Map<ViewReviewForWalkerDto>(walker))
                 .ToList();
 
-            return reviewsForWalkers;
+            return reviewsForWalkers.Select(walker => Mapper.Map<ViewReviewForWalkerDto>(walker)).ToList();
         }
 
         public void Dispose()
