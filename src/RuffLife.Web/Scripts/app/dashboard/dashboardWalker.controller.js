@@ -11,6 +11,12 @@ function DashboardWalkerController(userAuthService, ownerService, pendingWalksSe
     vm.pendingWalks = pendingWalksService.pendingWalks;
 
     vm.upcomingWalks = upcomingWalksService.upcomingWalks;
-    console.log('pending: ', vm.pendingWalks);
-    console.log('upcoming: ', vm.upcomingWalks);
+
+    vm.reject = function () {
+        console.log('Rejected!');
+    };
+
+    vm.accept = function () {
+        console.log('Accepted!');
+    };
 };
