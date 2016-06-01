@@ -8,7 +8,7 @@ function DogReviewService($http, $q) {
     var dogReviews;
 
     function getDogReviews(id) {
-        $http.get('/api/reviewForDogs/get-reviews/' + id).then(function (response) {
+        $http.get('/api/dogs/' + id + '/reviews').then(function (response) {
             dogReviews = response.data;
             console.log(dogReviews);
             return $q.resolve(dogReviews);

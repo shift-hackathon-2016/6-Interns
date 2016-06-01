@@ -9,14 +9,14 @@ function UserAuthService($http, $q, $rootScope) {
     var owners;
     var walkers;
     function getAllOwners() {
-        $http.get('/api/owners/get-all').then(function (response) {
+        $http.get('/api/owners/all').then(function (response) {
             owners = response.data;
         });
     };
     getAllOwners();
 
     function getAllWalkers() {
-        $http.get('/api/walkers/get-all').then(function (response) {
+        $http.get('/api/walkers/all').then(function (response) {
             walkers = response.data;
         });
     };

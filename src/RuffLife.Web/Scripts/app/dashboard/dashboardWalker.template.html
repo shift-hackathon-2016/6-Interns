@@ -1,7 +1,7 @@
 ﻿<h1>Walker</h1>
 
 <h2>Pending walks</h2>
-<div ng-repeat="pendingWalk in vm.pendingWalks"></div>
+<div ng-repeat="pendingWalk in vm.pendingWalks" ng-cloak></div>
     <span>{{pendingWalk.startTime | date:'dd-MM-yyyy'}}</span>
     <span>{{pendingWalk.startTime | date:'HH:mm'}} - {{pendingWalk.endTime | date:'HH:mm'}}</span>
     <p>{{pendingWalk.location}}</p>
@@ -15,7 +15,7 @@
 </div>
 <br />
 <h2>Upcoming walks</h2>
-<div ng-repeat="upcomingWalk in vm.upcomingWalks">
+<div ng-repeat="upcomingWalk in vm.upcomingWalks" ng-cloak>
     <span>{{upcomingWalk.startTime | date:'dd-MM-yyyy'}}</span>
     <span>{{upcomingWalk.startTime | date:'HH:mm'}} - {{upcomingWalk.endTime | date:'HH:mm'}}</span>
     <p>{{upcomingWalk.location}}</p>

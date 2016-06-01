@@ -8,7 +8,7 @@ function OwnerService($http, $q) {
     var owners;
 
     function getAllOwners() {
-        $http.get('/api/owners/get-all').then(function (response) {
+        $http.get('/api/owners/all').then(function (response) {
             owners = response.data;
         });
     };
