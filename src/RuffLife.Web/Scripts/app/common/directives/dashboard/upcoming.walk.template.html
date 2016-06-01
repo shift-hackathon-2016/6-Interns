@@ -1,0 +1,39 @@
+﻿<div class="row">
+
+    <div class="scheldule">
+
+        <a href="#" data-toggle="modal" data-target="#walk-1">
+            <div class="walk col-md-12">
+                <div class="col-md-1">
+                    <span class="broj">1</span>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        {{upcomingWalk.startTime | date:'dd-MM-yyyy'}}
+                    </div>
+                    <div class="row second">
+                        {{upcomingWalk.startTime | date:'HH:mm'}} - {{upcomingWalk.endTime | date:'HH:mm'}}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        {{upcomingWalk.location}}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <img class="up" width="13" src="/Content/img/icons/paw-gray.png"/>{{upcomingWalk.dog.name}}
+                    </div>
+                    <div class="row">
+                        <img class="upStar" width="13" src="/Content/img/icons/star.png"/>4.9<span> (10)</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <img class="arrow" src="/Content/img/icons/arrow.png"/>
+                    <div class="price">{{upcomingWalk.price}}€</div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>

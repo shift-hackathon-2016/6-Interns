@@ -1,24 +1,85 @@
-﻿<h1>Walker</h1>
+<div class="conatiner-fluid">
 
-<h2>Pending walks</h2>
-<div ng-repeat="pendingWalk in vm.pendingWalks" ng-cloak></div>
-    <span>{{pendingWalk.startTime | date:'dd-MM-yyyy'}}</span>
-    <span>{{pendingWalk.startTime | date:'HH:mm'}} - {{pendingWalk.endTime | date:'HH:mm'}}</span>
-    <p>{{pendingWalk.location}}</p>
-    <p>{{pendingWalk.dog.name}}</p>
-<br /> <br />
-<div ng-repeat="walk in vm.user.walk">
-    <span>{{walk.startTime | date:'dd-MM-yyyy'}}</span>
-    <span>{{walk.startTime | date:'HH:mm'}} - {{walk.endTime | date:'HH:mm'}}</span>
-    <p>{{walk.location}}</p>
-    <p>{{walk.price}}</p>
+    <div class="col-md-4">
+        <div class="row">
+            <div id="sidebar" class="col-md-12">
+
+                <div class="row">
+                    <div id="offer-title">
+                        <div class="number">
+                            {{vm.pendingWalks.length}}
+                        </div>
+                        <div class="text">
+                            <div class="row">
+                                <h1>Offers</h1>
+                            </div>
+                            <div class="row">
+                                <span class="description">
+                                    Active offers around you.
+                                </span>
+                            </div>
+                            <div id="clear" class="row">
+                                <a href="#"><img width="12" src="/Content/img/icons/close.png"/>Clear all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-repeat="pendingWalk in vm.pendingWalks">
+                    <div dashboard-pending-walk></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="walker-scheldule" class="col-md-6">
+
+        <div class="title">
+            <div class="number">{{vm.upcomingWalks.length}}</div>
+            <h1> upcoming walks</h1>
+            <div class="map">
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+
+        <div ng-repeat="upcomingWalk in vm.upcomingWalks">
+            <div dashboard-upcoming-walk></div>
+            </div>
+        </div>
+
+    <div id="history" class="col-md-2">
+        <div class="row">
+            <h2>History</h2>
+        </div>
+        <div ng-repeat="walk in vm.user.walk">
+            <div class="row">
+                <span>{{walk.startTime | date:'dd-MM-yyyy'}}</span>
+                <span>{{walk.startTime | date:'HH:mm'}} - {{walk.endTime | date:'HH:mm'}}</span>
+                <p>{{walk.location}}</p>
+                <p>{{walk.price}} HRK</p>
+                <hr />
+            </div>
+        </div>
+    </div>
 </div>
-<br />
-<h2>Upcoming walks</h2>
-<div ng-repeat="upcomingWalk in vm.upcomingWalks" ng-cloak>
-    <span>{{upcomingWalk.startTime | date:'dd-MM-yyyy'}}</span>
-    <span>{{upcomingWalk.startTime | date:'HH:mm'}} - {{upcomingWalk.endTime | date:'HH:mm'}}</span>
-    <p>{{upcomingWalk.location}}</p>
-    <p>{{upcomingWalk.price}}</p>
-    <p>{{upcomingWalk.dog.name}}</p>
-</div>
+
+
+
+<script>
+    function initializeMap() {
+
+        var myLatlng = new google.maps.LatLng(43.524506, 16.434235);
+        var mapOptions = {
+            zoom: 16,
+            center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: '1',
+            icon: ''
+        });
+    }
+</script>

@@ -1,0 +1,105 @@
+body{ font-family: 'Roboto', sans-serif; font-size: 14px;}
+
+.text-right{ text-align: right; }
+h1{ text-transform: uppercase; font-size: 18px; padding: 0; margin: 0; letter-spacing: 0.6px; font-weight: 700;}
+.text-center{ text-align: center; }
+
+a:hover{ text-decoration: none; }
+
+#nav{ padding: 0px 25px; background: #333; color: #ddd; height: 58px; letter-spacing: 0.4px;}
+#nav img.logo{ float:left; margin-top: 18px;}
+#nav ul{ float: right; margin-top: 19px;}
+#nav ul li{ list-style: none; float: left; margin-left: 50px;}
+#nav ul li.profile{ margin-top: -2px; }
+#nav span.number{ font-weight: 700; background: #f56991; padding: 6px 10px; border-radius: 4px; margin-right: 4px;}
+#nav .profile img{ margin: -2px 4px 0 0; border-radius: 50%;}
+
+#sidebar{ background: #454545; color: #fff; height:93.9vh;}
+#offer-title{ padding: 26px;}
+#offer-title .number, #walker-scheldule .number{ background: #f56991; font-size: 26px; font-weight: 900; text-align: center; padding: 4px 14px; border-radius: 8px; float: left; color: #fff;}
+#offer-title .text{float: left; margin-left: 30px; padding-bottom: 30px;}
+#offer-title .description{ font-size: 14px; color: #ccc; margin: 0; clear: both;}
+#offer-title #clear{ margin-top: 8px;}
+#offer-title #clear a{ font-size: 11px; text-transform: uppercase; color: #aaa;}
+#offer-title #clear a:hover{ text-decoration: none; color: #f56868; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+#offer-title img{ margin: -3px 3px 0; }
+
+.offer{ letter-spacing: 0.4px; padding: 28px 42px; background: #4e4e4e; margin-bottom: 4px;}
+.offer .top{ margin-bottom: 14px; }
+.offer img.up{ margin: -2px 3px 0 0; }
+.offer img.upStar{ margin: -5px 3px 0 0; }
+.offer .top span{ font-size: 10px; }
+.offer .info{ color: #ddd; }
+.offer .second, .offer .bottom{ font-weight: 700; text-transform: uppercase;}
+.offer .bottom{ margin-top: 24px;}
+.offer .bottom .arrow{margin: -3px 0 0 8px;}
+.offer .red a{ color: #f56868; }
+.offer .green a{ color: #6acb71; }
+.offer a{ color: #fff; }
+.offer a:hover{ text-decoration: none; }
+
+#walker-scheldule .title{ background: #eee; padding: 20px 20px 66px;}
+#walker-scheldule .title h1{ color: #777; margin: 12px 0 0 10px; font-weight: 900; float: left;}
+#walker-scheldule .number{ margin-right: 10px; float: left; background: #ddd; font-size: 26px; font-weight: 900; text-align: center; padding: 4px 14px; border-radius: 8px; float: left; color: #777;}
+#map-canvas { width: 100%; height: 274px; padding: 15px;}
+
+.walk{ padding: 18px 16px 16px; border-bottom: 2px solid #eee; color: #777;}
+.walk span{ font-size: 10px; }
+.walk:hover{ background: #f5f5f5; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.walk .broj{ font-size: 30px; font-weight: 700; color: #ccc;}
+.walk .second, .floatInfo .second{ font-weight: 700; text-transform: uppercase;}
+.walk .price{ font-size: 20px; font-weight: 700; color: #999; display: block; float: left; margin: 8px 15px 0 0; float: right;}
+.walk .arrow{ margin-top: 15px; float: right;}
+.walk .upStar{ margin: -5px 3px 0 0;}
+.walk .up{ margin: -4px 3px 0 0;}
+.walk:last-child{ border: none; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+
+body#vlasnik{ background: #d1f2a5; }
+
+.ljubimci{ margin-top: 45px; border-radius: 8px; color: #fff;}
+.ljubimci img.main, .floatInfo img.main{ position: absolute; border-top-left-radius: 8px; border-top-right-radius: 8px; z-index: -1;}
+.floatInfo img.main{ border-radius: 0; }
+.ljubimci .edit{ z-index: 100; opacity: 0.7; float: right; padding: 14px;}
+.floatInfo .edit { z-index: 100; opacity: 1; float: right; padding: 14px;}
+.floatInfo .edit .close{ color: #fff; opacity: 0.7;}
+.ljubimci .edit:hover, .floatInfo .edit:hover{ opacity: 1; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.ljubimci .information, .floatInfo .information{ position: absolute; width: 100%; bottom: 14px;}
+.ljubimci .name, .floatInfo .name{ margin-top: -3px; float: left; margin-left: 14px; font-size: 16px; font-weight: 500; color: #fff;}
+.ljubimci .name img, .floatInfo .name img{ margin: -2px 3px 0 0; }
+.ljubimci .rating, .floatInfo .rating{ float: right; margin-right: 14px; color: #fff;}
+.ljubimci .rating img, .floatInfo .rating img{ margin-top: -5px; }
+.ljubimci .rating span, .floatInfo .rating span{ font-size: 10px; }
+.ljubimci .relative{ height: 160px; position: relative;}
+.floatInfo .relative{ height: 204px; position: relative;}
+.ljubimci .tabs{ text-align: center; background: #f5f5f5; color: #777; padding: 0 15px;}
+.ljubimci .tab{ border-bottom: 1px solid #eee; padding: 14px 0; }
+.ljubimci .tab:hover{ background: #e5e5e5; padding: 14px 0; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.ljubimci .walk{ background: #fff; padding: 14px 31px;}
+.ljubimci .walk:hover{ color: #454545; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.ljubimci .walk:hover .price{ color: #545454; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.ljubimci .new-walk{ text-align: center; padding: 16px; background: #ff9f80; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; text-transform: uppercase; font-weight: 700; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+.ljubimci .new-walk:hover{ background: #d9876d; }
+
+.add-new{ margin-top: 45px; border-radius: 8px; background: #d1f2a5; border: 2px dashed #c1df99;}
+.add-new img{ margin: 45px 0 20px; }
+a .add-new{ color: #889a70; text-transform: uppercase; font-weight: 700; font-size: 16px; padding: 0 0 40px;}
+a .add-new:hover{  background: #c1df99; border: 2px dashed #889a70; -webkit-transition: all ease-in-out 0.4s; -moz-transition: all ease 0.4s; -o-transition: all ease 0.4s; transition: all ease 0.4s;}
+
+.floatInfo{ float: right; right: 0;}
+.floatInfo .relative{ margin-bottom: -3px; }
+.space{ background: #f5f5f5; color: #777; padding: 14px;}
+.space h3{ text-transform: uppercase; margin: 10px 0 10px 10px; float: left;}
+.space .rating{ float: left; margin-left: 10px; color: #777; margin-top: 12px;}
+.white{ background: #fff; color: #777; padding: 14px; }
+.user{ float: left; font-weight: 500; margin: 11px 0 0 14px;}
+.rating-review{ float: right; margin-right: 8px;}
+.review{border-bottom: 1px solid #ccc; padding: 15px;}
+.review:last-child{ border: 0;}
+
+.offer-modal .space{ background: #454545; color: #ddd;}
+.offer-modal .white{ background: #4e4e4e; color: #ddd;}
+.offer-modal .space .rating{ color: #bbb;}
+.offer-modal .red a{ color: #f56868; text-align: center; font-weight: 700; text-transform: uppercase;}
+.offer-modal .green a{ color: #6acb71; font-weight: 700; text-transform: uppercase;}
+.offer-modal a:hover{ text-decoration: none; }
+.offer-modal .review{ border-bottom: 1px solid #555; }
