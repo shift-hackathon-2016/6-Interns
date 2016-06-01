@@ -47,23 +47,7 @@ namespace RuffLife.Data.Context
             walks.ForEach(x => context.Walks.Add(x));
             context.SaveChanges();
 
-            var reviewForWalkers = new List<ReviewForWalker>
-            {
-                new ReviewForWalker { Grade = 5, Review = "Super", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Izabela"), Owner = context.Owners.FirstOrDefault(x => x.Username == "Andrea") },
-                new ReviewForWalker { Grade = 4, Review = "Vrlo dobro", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Josipa"), Owner = context.Owners.FirstOrDefault(x => x.Username == "Mirko") },
-                new ReviewForWalker { Grade = 3, Review = "OK", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Ante"), Owner = context.Owners.FirstOrDefault(x => x.Username == "Nikola") }
-            };
-            reviewForWalkers.ForEach(x => context.ReviewsForWalkers.Add(x));
-            context.SaveChanges();
-
-            var reviewForDogs = new List<ReviewForDog>
-            {
-                new ReviewForDog { Grade = 5, Review = "Super", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Izabela"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Dota") },
-                new ReviewForDog { Grade = 5, Review = "Super", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Josipa"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Alba") },
-                new ReviewForDog { Grade = 4, Review = "Vrlo dobro", Walker = context.Walkers.FirstOrDefault(x => x.Username == "Ante"), Dog = context.Dogs.FirstOrDefault(x => x.Name == "Vau") }
-            };
-            reviewForDogs.ForEach(x => context.ReviewsForDogs.Add(x));
-            context.SaveChanges();
+            
         }
     }
 }

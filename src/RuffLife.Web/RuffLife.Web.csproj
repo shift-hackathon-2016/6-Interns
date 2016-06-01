@@ -193,8 +193,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\DogController.cs" />
     <Compile Include="Controllers\API\OwnerController.cs" />
-    <Compile Include="Controllers\API\ReviewForDogController.cs" />
-    <Compile Include="Controllers\API\ReviewForWalkerController.cs" />
     <Compile Include="Controllers\API\WalkController.cs" />
     <Compile Include="Controllers\API\WalkerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

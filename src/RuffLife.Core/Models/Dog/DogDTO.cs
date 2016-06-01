@@ -1,5 +1,4 @@
 ﻿using RuffLife.Core.Models.Owner;
-using RuffLife.Core.Models.ReviewForDog;
 using RuffLife.Core.Models.Walk;
 using System;
 using System.Collections.Generic;
@@ -37,7 +36,6 @@ namespace RuffLife.Core.Models.Dog
         public string Description { get; set; }
         public string Notes { get; set; }
         public virtual ViewOwnerDto Owner { get; set; }
-        public virtual ICollection<ViewReviewForDogDto> ReviewsReceived { get; set; }
         public virtual ICollection<ViewWalkDto> Walks { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using RuffLife.Core.Models.Walk;
 using RuffLife.Core.Services.Interfaces;
 using System.Web.Http;
@@ -39,22 +40,24 @@ namespace RuffLife.Web.Controllers.API
 
         [Route("{walkerId}/createWalk")]
         [HttpPost]
-        public void CreateWalk(CreateWalkDto newWalk)
+        public IHttpActionResult CreateWalk(ViewOwnerDto newWalk, int walkerId)
         {
-            var owner = _ownerService.GetOwner(ownerId);
-            var walker = _walkerService.GetWalker()
 
             var walk = new CreateWalkDto()
             {
                 StartTime = DateTime.Now,
                 EndTime = DateTime.Now.Add(new TimeSpan(1, 0, 0)),
-                Location = owner.Location,
+                Walker = _walkerService.GetWalker(walkerId),
+                Dogs = _dogService.GetDogsByOwner(newWalk.Id),
                 IsFinished = false,
-                Walker = walker,
-                Dogs = owner.Dogs
-                };
-            _walkService.CreateWalk(newWalk);
+                Location = newWalk.Location
+            };
+
+            _walkService.CreateWalk(walk);
+            return Ok();
         }
+
+
 
         [Route("update/{Id}")]
         [HttpPost]

@@ -40,8 +40,6 @@ namespace RuffLife.Core.Repositories
         {
             var walkers = _ruffLifeContext.Walkers
                 .Include("Walks")
-                .Include("ReviewsReceived")
-                .Include("ReviewsGiven")
                 .ToList();
 
             return walkers
@@ -53,8 +51,6 @@ namespace RuffLife.Core.Repositories
         {
             var walker = _ruffLifeContext.Walkers
                 .Include("Walks")
-                .Include("ReviewsGiven")
-                .Include("ReviewsReceived")
                 .FirstOrDefault(x => x.Id == walkerId);
 
             return Mapper.Map<ViewWalkerDto>(walker);

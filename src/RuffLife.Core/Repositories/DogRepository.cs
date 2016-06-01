@@ -40,7 +40,6 @@ namespace RuffLife.Core.Repositories
         {
             var dog = _ruffLifeContext.Dogs
                 .Include("Owner")
-                .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == updatedDog.Id);
 
@@ -54,7 +53,6 @@ namespace RuffLife.Core.Repositories
         {
             var dog = _ruffLifeContext.Dogs
                 .Include("Owner")
-                .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == dogId);
 
@@ -65,7 +63,6 @@ namespace RuffLife.Core.Repositories
         {
             var dog = _ruffLifeContext.Dogs
                 .Include("Owner")
-                .Include("ReviewsReceived")
                 .Include("Walks")
                 .FirstOrDefault(x => x.Id == dogId);
 
@@ -77,7 +74,6 @@ namespace RuffLife.Core.Repositories
         {
             var dogs = _ruffLifeContext.Dogs
                 .Include("Owner")
-                .Include("ReviewsForDogs")
                 .Include("Walks")
                 .Where(x => x.Owner.Id == ownerId)
                 .ToList();
@@ -89,7 +85,6 @@ namespace RuffLife.Core.Repositories
         {
             var dogs = _ruffLifeContext.Dogs
                 .Include("Owner")
-                .Include("ReviewsReceived")
                 .Include("Walks")
                 .Where(d => d.Walks.Any(w => w.Id == walkId))
                 .ToList();

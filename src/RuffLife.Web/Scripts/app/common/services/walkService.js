@@ -6,7 +6,8 @@ WalkService.$inject = ['$http'];
 
 function WalkService($http) {
     function createWalk(walkToCreate) {
-        $http.post('api/walks/create', walkToCreate);
+        var walkerId = walkToCreate.walker;
+        return $http.post(`api/walks/${walkerId}/createWalk`, walkToCreate.user);
     }
 
     return {

@@ -69,8 +69,6 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Dog.cs" />
     <Compile Include="Models\Owner.cs" />
-    <Compile Include="Models\ReviewForDog.cs" />
-    <Compile Include="Models\ReviewForWalker.cs" />
     <Compile Include="Models\Walk.cs" />
     <Compile Include="Models\Walker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

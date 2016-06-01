@@ -15,11 +15,7 @@ namespace RuffLife.Data.Context.Configurations
             HasMany(o => o.Dogs)
                .WithRequired(d => d.Owner)
                .WillCascadeOnDelete(false);
-
-            //reviews that owner gives are always saved
-            HasMany(o => o.ReviewsGiven)
-                .WithRequired(r => r.Owner)
-                .WillCascadeOnDelete(false);
+            
         }
     }
 }

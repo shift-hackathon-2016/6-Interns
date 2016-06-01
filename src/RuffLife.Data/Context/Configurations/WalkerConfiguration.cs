@@ -7,18 +7,6 @@ namespace RuffLife.Data.Context.Configurations
     {
         public WalkerConfiguration()
         {
-            HasMany(w => w.ReviewsReceived)
-                .WithRequired(r => r.Walker)
-                .WillCascadeOnDelete();
-
-            HasMany(w => w.ReviewsGiven)
-                .WithRequired(r => r.Walker)
-                .WillCascadeOnDelete();
-
-            HasMany(w => w.Walks)
-                .WithRequired(walk => walk.Walker)
-                .WillCascadeOnDelete();
-
         }
     }
 }

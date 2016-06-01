@@ -13,7 +13,6 @@ namespace RuffLife.Data.Models
         public DateTime EndTime { get; set; }
         public string Location { get; set; }
         public double Price { get; set; }
-        public bool IsFinished { get; set; }
 
         [JsonIgnore]
         public virtual Walker Walker { get; set; }

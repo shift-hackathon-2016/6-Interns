@@ -14,9 +14,7 @@ namespace RuffLife.Data.Models
         public double CostPerHourInHRK { get; set; }
         public string ContactNumber { get; set; }
         public string Description { get; set; }
-
-        public virtual ICollection<ReviewForDog> ReviewsGiven { get; set; }
-        public virtual ICollection<ReviewForWalker> ReviewsReceived { get; set; }
+        
         public virtual ICollection<Walk> Walks { get; set; }
     }
 }

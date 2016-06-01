@@ -1,5 +1,4 @@
-﻿using RuffLife.Core.Models.ReviewForDog;
-using RuffLife.Core.Models.ReviewForWalker;
+﻿
 using RuffLife.Core.Models.Walk;
 using System;
 using System.Collections.Generic;
@@ -28,9 +27,7 @@ namespace RuffLife.Core.Models.Walker
         public double CostPerHourInHRK { get; set; }
         public string ContactNumber { get; set; }
         public string Description { get; set; }
-
-        public virtual ICollection<ViewReviewForDogDto> ReviewsGiven { get; set; }
-        public virtual ICollection<ViewReviewForWalkerDto> ReviewsReceived { get; set; }
+        
         public virtual ICollection<ViewWalkDto> Walks { get; set; }
     }
 }
