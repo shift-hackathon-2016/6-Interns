@@ -18,7 +18,11 @@ function DashboardWalkerController(userAuthService, ownerService, pendingWalksSe
         $scope.$on('PENDING_WALK_REMOVED', function (event, obj) { vm.pendingWalks = obj;});
     };
 
-    vm.accept = function (id) {
+    vm.accept = function (id, walk) {
         console.log('Accepted!');
+        pendingWalksService.removePendingWalk(id);
+        upcomingWalksService.addUpcomingWalk(walk);
+        $scope.$on('PENDING_WALK_REMOVED', function (event, obj) { vm.pendingWalks = obj; });
+        $scope.$on('UPCOMING_WALK_ADDED', function (event, obj) { vm.upcomingWalks = obj; });
     };
 };
