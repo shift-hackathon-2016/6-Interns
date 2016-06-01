@@ -4,7 +4,7 @@ angular.module('app').directive('dashboardPendingWalk', DashboardPendingWalk);
 
 function DashboardPendingWalk() {
     return {
-        templateUrl: "Scripts/app/common/dashboard/dashboard.pending.walk.template.html",
+        templateUrl: "./Scripts/app/common/directives/dashboard/pending.walk.template.html",
         restrict: "A"
     }
 }

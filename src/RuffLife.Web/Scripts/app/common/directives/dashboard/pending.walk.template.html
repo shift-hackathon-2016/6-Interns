@@ -1,0 +1,50 @@
+﻿<div class="offer row">
+
+    <div class="row top">
+        <div class="col-md-4">
+            <div class="row">
+                <a href="#"><img class="up" width="13" src="/Content/img/icons/paw-white.png" />{{pendingWalk.dog.name}}</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <a href="#"><img class="upStar" width="13" src="/Content/img/icons/star.png" />4.9<span> (10)</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row info">
+        <div class="col-md-4">
+            <div class="row">
+                <a>{{pendingWalk.startTime | date:'dd.MM.yyyy'}}</a>
+            </div>
+            <div class="row second">
+                <a>{{pendingWalk.startTime | date:'HH:mm'}} - {{pendingWalk.endTime | date:'HH:mm'}}</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <a>{{pendingWalk.location}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row bottom">
+        <div class="col-md-5">
+            <div class="row">
+                <a data-toggle="modal" data-target="#offer-1">More details<img class="arrow" src="Content/img/icons/arrow.png" width="7" /></a>
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-3 text-right red">
+            <div class="row">
+                <a href="#">Reject</a>
+            </div>
+        </div>
+        <div class="col-md-3 text-right green">
+            <div class="row">
+                <a href="#">Accept</a>
+            </div>
+        </div>
+    </div>
+
+</div>
