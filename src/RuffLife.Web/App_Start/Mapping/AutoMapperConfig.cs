@@ -76,8 +76,6 @@ namespace RuffLife.Web.Mapping
             Mapper.CreateMap<ViewWalkOfferDto, WalkOffer>().IgnoreUnmappedProperties();
             Mapper.CreateMap<WalkOffer, CreateWalkOfferDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<CreateWalkOfferDto, WalkOffer>().IgnoreUnmappedProperties();
-            Mapper.CreateMap<WalkOffer, UpdateWalkOfferDto>().IgnoreUnmappedProperties();
-            Mapper.CreateMap<UpdateWalkOfferDto, WalkOffer>().IgnoreUnmappedProperties();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RuffLife.Core.Repositories.Interfaces;
+using RuffLife.Core.Models.Walker;
 
 namespace RuffLife.Core.Repositories
 {
@@ -74,6 +75,19 @@ namespace RuffLife.Core.Repositories
                 .Include("Walker")
                 .Include("Dogs")
                 .Where(x => x.Dogs.Any(_ => _.Id == dogId))
+                .ToList();
+
+            return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();
+        }
+
+        public IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId)
+        {
+            var walker = _ruffLifeContext.Walkers.FirstOrDefault(x => x.Id == walkerId);
+
+            var walks = _ruffLifeContext.Walks
+                .Include("Walker")
+                .Include("Dogs")
+                .Where(x => (x.StartTime > DateTime.Now) && (x.Walker == null) && (x.Location == walker.Location))
                 .ToList();
 
             return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();

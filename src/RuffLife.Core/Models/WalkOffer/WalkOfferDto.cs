@@ -10,12 +10,6 @@ namespace RuffLife.Core.Models.WalkOffer
         public virtual ViewWalkerDto Walker { get; set; }
     }
 
-    public class UpdateWalkOfferDto
-    {
-        public int Id { get; set; }
-        public bool IsActive { get; set; }
-    }
-
     public class ViewWalkOfferDto
     {
         public int Id { get; set; }
