@@ -2,9 +2,9 @@
 
 angular.module('app').controller('dashboardOwnerController', DashboardOwnerController);
 
-DashboardOwnerController.$inject = ['ownerService'];
+DashboardOwnerController.$inject = ['ownerService', 'orderedDogWalksService', 'pastDogWalksService', '$rootScope'];
 
-function DashboardOwnerController(ownerService) {
+function DashboardOwnerController(ownerService, orderedDogWalksService, pastDogWalksService, $rootScope) {
     var vm = this;
 
     vm.isAddPet = false;
@@ -25,12 +25,19 @@ function DashboardOwnerController(ownerService) {
         }]
     };
 
-    vm.save = function () {
-        vm.isAddPet = false;
-        //dog.push();
-    };
+    vm.orderedWalks = orderedDogWalksService.getOrderedWalks();
+    console.log(vm.orderedWalks);
+    vm.currentWalk = orderedDogWalksService.getCurrentWalk();
+    console.log(vm.currentWalk);
+    vm.pastWalks = pastDogWalksService.getPastWalks();
+    console.log(vm.pastWalks);
 
     vm.walkOrder = function () {
 
+    };
+
+    vm.save = function () {
+        vm.isAddPet = false;
+        //dog.push();
     };
 };
