@@ -37,13 +37,12 @@ namespace RuffLife.Web.Controllers.API
             return Ok(walk);
         }
 
-        [Route("create")]
+        [Route("{walkerId}/createWalk")]
         [HttpPost]
-        public void CreateWalk(dynamic newWalk)
+        public void CreateWalk(CreateWalkDto newWalk)
         {
-            var ownerId = int.Parse(newWalk["user"]["Id"]);
             var owner = _ownerService.GetOwner(ownerId);
-            var walker = _walkerService.GetWalker(int.Parse(newWalk["walker"]));
+            var walker = _walkerService.GetWalker()
 
             var walk = new CreateWalkDto()
             {
