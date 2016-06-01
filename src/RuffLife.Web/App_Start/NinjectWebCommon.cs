@@ -80,7 +80,6 @@ namespace RuffLife.Web
             kernel.Bind<IReviewForDogRepository>().To<ReviewForDogRepository>();
             kernel.Bind<IReviewForWalkerRepository>().To<ReviewForWalkerRepository>();
             kernel.Bind<IWalkerRepository>().To<WalkerRepository>();
-            kernel.Bind<IWalkOfferRepository>().To<WalkOfferRepository>();
             kernel.Bind<IWalkRepository>().To<WalkRepository>();
 
 
@@ -89,7 +88,6 @@ namespace RuffLife.Web
             kernel.Bind<IReviewForDogService>().To<ReviewForDogService>();
             kernel.Bind<IReviewForWalkerService>().To<ReviewForWalkerService>();
             kernel.Bind<IWalkerService>().To<WalkerService>();
-            kernel.Bind<IWalkOfferService>().To<WalkOfferService>();
             kernel.Bind<IWalkService>().To<WalkService>();
         }        
     }

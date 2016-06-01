@@ -15,6 +15,5 @@ namespace RuffLife.Core.Services.Interfaces
         ViewWalkDto GetWalk(int walkId);
         IList<ViewWalkDto> GetWalksByWalker(int walkerId);
         IList<ViewWalkDto> GetWalksByDog(int dogId);
-        IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId);
     }
 }

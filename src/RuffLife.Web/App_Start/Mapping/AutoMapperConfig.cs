@@ -7,7 +7,6 @@ using RuffLife.Data.Context;
 using RuffLife.Core.Models.Dog;
 using RuffLife.Core.Models.ReviewForDog;
 using RuffLife.Core.Models.ReviewForWalker;
-using RuffLife.Core.Models.WalkOffer;
 
 namespace RuffLife.Web.Mapping
 {
@@ -71,11 +70,7 @@ namespace RuffLife.Web.Mapping
             Mapper.CreateMap<ViewWalkerDto, Walker>().IgnoreUnmappedProperties();
             Mapper.CreateMap<Walker, CreateWalkerDto>().IgnoreUnmappedProperties();
             Mapper.CreateMap<CreateWalkerDto, Walker>().IgnoreUnmappedProperties();
-
-            Mapper.CreateMap<WalkOffer, ViewWalkOfferDto>().IgnoreUnmappedProperties();
-            Mapper.CreateMap<ViewWalkOfferDto, WalkOffer>().IgnoreUnmappedProperties();
-            Mapper.CreateMap<WalkOffer, CreateWalkOfferDto>().IgnoreUnmappedProperties();
-            Mapper.CreateMap<CreateWalkOfferDto, WalkOffer>().IgnoreUnmappedProperties();
+            
         }
     }
 }

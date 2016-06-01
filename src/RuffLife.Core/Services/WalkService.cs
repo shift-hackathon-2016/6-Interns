@@ -1,12 +1,8 @@
 ﻿using RuffLife.Core.Models.Walk;
-using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Core.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RuffLife.Core.Services
 {
@@ -44,14 +40,9 @@ namespace RuffLife.Core.Services
             return _walkRepository.GetWalksByDog(dogId);
         }
 
-        public IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId)
-        {
-            return _walkRepository.GetActiveOffersForWalker(walkerId);
-        }
-
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _walkRepository.Dispose();
         }
     }
 }

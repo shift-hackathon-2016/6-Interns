@@ -1,0 +1,25 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div id="nav">
+            <div class="col-md-3">
+                <img class="logo" src="Content/img/logo.png"/>
+            </div>
+
+            <div class="col-md-9">
+                <ul>
+                    <li><span class="hidden-xs"> Create Walk</span></li>
+                    <li class="profile"><img width="28" src="Content/img/img-placeholder.jpg"/><span class="hidden-xs">{{$rootScope.user}}</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <form>
+        <div class="form-group">
+            <select class="form-control" ng-model="vm.walker">
+                <option ng-repeat="walkers in vm.walkers" value="{{walker.Id}}">{{walker.Username}}</option>
+            </select>
+        </div>
+    </form>
+</div>
+<div ui-view></div>

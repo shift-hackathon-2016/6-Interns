@@ -4,6 +4,7 @@
     <p>{{vm.user.pet.petName}}</p>
     <br />
     <h2>Past walks</h2>
+    <div class="btn btn-primary" ui-sref="new-walk">Create Walk</div>
     <div ng-repeat="pastWalk in vm.pastWalks">
         <span>{{pastWalk.startTime | date:'dd-MM-yyyy'}}</span>
         <span>{{pastWalk.startTime | date:'HH:mm'}} - {{pastWalk.endTime | date:'HH:mm'}}</span>

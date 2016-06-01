@@ -27,7 +27,8 @@ namespace RuffLife.Core.Repositories
                 StartTime = newWalk.StartTime,
                 EndTime = newWalk.EndTime,
                 Location = newWalk.Location,
-                Dogs = newWalk.Dogs.Select(dog => Mapper.Map<Dog>(newWalk.Dogs)).ToList()
+                Dogs = newWalk.Dogs.Select(dog => Mapper.Map<Dog>(newWalk.Dogs)).ToList(),
+                IsFinished = false
             };
 
             _ruffLifeContext.Walks.Add(walk);
@@ -44,6 +45,7 @@ namespace RuffLife.Core.Repositories
 
             walk.Price = updatedWalk.Price;
             walk.Walker = Mapper.Map<Walker>(updatedWalk.Walker);
+            walk.IsFinished = updatedWalk.IsFinished;
 
             _ruffLifeContext.SaveChanges();
         }
@@ -80,18 +82,6 @@ namespace RuffLife.Core.Repositories
             return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();
         }
 
-        public IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId)
-        {
-            var walker = _ruffLifeContext.Walkers.FirstOrDefault(x => x.Id == walkerId);
-
-            var walks = _ruffLifeContext.Walks
-                .Include("Walker")
-                .Include("Dogs")
-                .Where(x => (x.StartTime > DateTime.Now) && (x.Walker == null) && (x.Location == walker.Location))
-                .ToList();
-
-            return walks.Select(walk => Mapper.Map<ViewWalkDto>(walk)).ToList();
-        }
 
         public void Dispose()
         {

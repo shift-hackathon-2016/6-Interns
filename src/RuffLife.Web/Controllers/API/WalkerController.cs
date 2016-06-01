@@ -72,13 +72,13 @@ namespace RuffLife.Web.Controllers.API
             var walks = _walkService.GetWalksByWalker(walkerId);
             return Ok(walks);
         }
-
-        [Route("{walkerId}/activeOffers")]
-        [HttpGet]
-        public IHttpActionResult GetActiveOffers(int walkerId)
+        
+        protected override void Dispose(bool disposing)
         {
-            var walks = _walkService.GetActiveOffersForWalker(walkerId);
-            return Ok(walks);
+            _walkerService.Dispose();
+            _reviewForWalkerService.Dispose();
+            _walkService.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
