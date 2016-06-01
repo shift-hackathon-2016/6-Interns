@@ -9,11 +9,13 @@ namespace RuffLife.Web.Controllers.API
     {
         private readonly IDogService _dogService;
         private readonly IReviewForDogService _reviewForDogService;
+        private readonly IWalkService _walkService;
 
-        public DogController(IDogService dogService, IReviewForDogService reviewForDogService)
+        public DogController(IDogService dogService, IReviewForDogService reviewForDogService, IWalkService walkService)
         {
             _dogService = dogService;
             _reviewForDogService = reviewForDogService;
+            _walkService = walkService;
         }
 
         [Route("{dogId}/reviews")]
@@ -38,6 +40,14 @@ namespace RuffLife.Web.Controllers.API
         {
             var dog = _dogService.GetDog(Id);
             return Ok(dog);
+        }
+
+        [Route("{dogId}/walks")]
+        [HttpGet]
+        public IHttpActionResult GetWalksByDog(int dogId)
+        {
+            var walks = _walkService.GetWalksByDog(dogId);
+            return Ok(walks);
         }
     }
 }

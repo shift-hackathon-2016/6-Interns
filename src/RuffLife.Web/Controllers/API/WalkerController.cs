@@ -15,11 +15,13 @@ namespace RuffLife.Web.Controllers.API
     {
         private readonly IWalkerService _walkerService;
         private readonly IReviewForWalkerService _reviewForWalkerService;
+        private readonly IWalkService _walkService;
 
-        public WalkerController(IWalkerService walkerService, IReviewForWalkerService reviewForWalkerService)
+        public WalkerController(IWalkerService walkerService, IReviewForWalkerService reviewForWalkerService, IWalkService walkService)
         {
             _walkerService = walkerService;
             _reviewForWalkerService = reviewForWalkerService;
+            _walkService = walkService;
         }
 
         [Route("get/{id}")]
@@ -61,6 +63,14 @@ namespace RuffLife.Web.Controllers.API
         {
             newReviewForWalker.Walker = _walkerService.GetWalker(walkerId);
             _reviewForWalkerService.CreateReviewForWalker(newReviewForWalker);
+        }
+
+        [Route("{walkerId}/walks")]
+        [HttpGet]
+        public IHttpActionResult GetWalksByWalker(int walkerId)
+        {
+            var walks = _walkService.GetWalksByWalker(walkerId);
+            return Ok(walks);
         }
     }
 }
