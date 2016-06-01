@@ -6,7 +6,7 @@ DashboardWalkerController.$inject = ['userAuthService', 'ownerService', 'pending
 
 function DashboardWalkerController(userAuthService, ownerService, pendingWalksService, upcomingWalksService, $scope) {
     var vm = this;
-
+    
     vm.user = {
         username : "Izabela", 
         location : "Split",

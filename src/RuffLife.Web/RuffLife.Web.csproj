@@ -179,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -201,8 +200,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\dog.jpg" />
+    <Content Include="Content\img\icons\arrow.jpg" />
+    <Content Include="Content\img\icons\arrow.png" />
+    <Content Include="Content\img\icons\close.png" />
+    <Content Include="Content\img\icons\edit.png" />
+    <Content Include="Content\img\icons\paw-big.png" />
+    <Content Include="Content\img\icons\paw-gray.png" />
+    <Content Include="Content\img\icons\paw-white.png" />
+    <Content Include="Content\img\icons\star.png" />
+    <Content Include="Content\img\img-placeholder.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\shadow-small.png" />
+    <Content Include="Content\img\shadow.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -210,6 +226,8 @@
     </Content>
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\directives\dashboard\dashboard.pending.walk.directive.js" />
+    <Content Include="Scripts\app\common\directives\dashboard\dashboard.pending.walk.template.html" />
     <Content Include="Scripts\app\common\services\dogReviewService.js" />
     <Content Include="Scripts\app\common\services\dogService.js" />
     <Content Include="Scripts\app\common\services\ownerService.js" />
