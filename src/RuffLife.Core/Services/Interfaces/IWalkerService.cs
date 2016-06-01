@@ -9,5 +9,6 @@ namespace RuffLife.Core.Services.Interfaces
         ViewWalkerDto GetWalker(int walkerId);
         void CreateWalker(CreateWalkerDto walker);
         IList<ViewWalkerDto> GetAllWalkers();
+        IList<ViewWalkerDto> GetWalkersByLocation(string query);
     }
 }

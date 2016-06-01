@@ -35,6 +35,11 @@ namespace RuffLife.Core.Services
             _walkerRepository.CreateWalker(newWalker);
         }
 
+        public IList<ViewWalkerDto> GetWalkersByLocation(string query)
+        {
+            return _walkerRepository.GetWalkersByLocation(query);
+        }
+
         public void Dispose()
         {
             _walkerRepository.Dispose();

@@ -60,6 +60,20 @@ namespace RuffLife.Core.Repositories
             return Mapper.Map<ViewWalkerDto>(walker);
         }
 
+        public IList<ViewWalkerDto> GetWalkersByLocation(string query)
+        {
+            var walkers = _ruffLifeContext.Walkers
+                .Include("Walks")
+                .Include("ReviewsReceived")
+                .Include("ReviewsGiven")
+                .Where(x => x.Location == query)
+                .ToList();
+
+            return walkers
+                .Select(walker => Mapper.Map<ViewWalkerDto>(walker))
+                .ToList();
+        }
+
         public void Dispose()
         {
             _ruffLifeContext.Dispose();

@@ -72,7 +72,15 @@ namespace RuffLife.Web.Controllers.API
             var walks = _walkService.GetWalksByWalker(walkerId);
             return Ok(walks);
         }
-        
+
+        [Route("search/{query}")]
+        [HttpGet]
+        public IHttpActionResult GetWalkersByLocation(string query)
+        {
+            var walkers = _walkerService.GetWalkersByLocation(query);
+            return Ok(walkers);
+        }
+
         protected override void Dispose(bool disposing)
         {
             _walkerService.Dispose();
