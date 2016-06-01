@@ -12,11 +12,13 @@ function DashboardWalkerController(userAuthService, ownerService, pendingWalksSe
 
     vm.upcomingWalks = upcomingWalksService.upcomingWalks;
 
-    vm.reject = function () {
+    vm.reject = function (id) {
         console.log('Rejected!');
+        pendingWalksService.removePendingWalk(id);
+        $scope.$on('PENDING_WALK_REMOVED', function (event, obj) { vm.pendingWalks = obj;});
     };
 
-    vm.accept = function () {
+    vm.accept = function (id) {
         console.log('Accepted!');
     };
 };

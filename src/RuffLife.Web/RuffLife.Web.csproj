@@ -192,6 +192,7 @@
     <Compile Include="Controllers\API\OwnerController.cs" />
     <Compile Include="Controllers\API\ReviewForDogController.cs" />
     <Compile Include="Controllers\API\ReviewForWalkerController.cs" />
+    <Compile Include="Controllers\API\WalkController.cs" />
     <Compile Include="Controllers\API\WalkerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -202,6 +203,19 @@
   <ItemGroup>
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\dog.jpg" />
+    <Content Include="Content\img\icons\arrow.jpg" />
+    <Content Include="Content\img\icons\arrow.png" />
+    <Content Include="Content\img\icons\close.png" />
+    <Content Include="Content\img\icons\edit.png" />
+    <Content Include="Content\img\icons\paw-big.png" />
+    <Content Include="Content\img\icons\paw-gray.png" />
+    <Content Include="Content\img\icons\paw-white.png" />
+    <Content Include="Content\img\icons\star.png" />
+    <Content Include="Content\img\img-placeholder.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\shadow-small.png" />
+    <Content Include="Content\img\shadow.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
