@@ -6,7 +6,6 @@ using System.Net.Http;
 using System.Web.Http;
 using RuffLife.Core.Services.Interfaces;
 using RuffLife.Core.Models.Walker;
-using RuffLife.Core.Models.ReviewForWalker;
 
 namespace RuffLife.Web.Controllers.API
 {
@@ -14,13 +13,11 @@ namespace RuffLife.Web.Controllers.API
     public class WalkerController : ApiController
     {
         private readonly IWalkerService _walkerService;
-        private readonly IReviewForWalkerService _reviewForWalkerService;
         private readonly IWalkService _walkService;
 
-        public WalkerController(IWalkerService walkerService, IReviewForWalkerService reviewForWalkerService, IWalkService walkService)
+        public WalkerController(IWalkerService walkerService, IWalkService walkService)
         {
             _walkerService = walkerService;
-            _reviewForWalkerService = reviewForWalkerService;
             _walkService = walkService;
         }
 
@@ -49,22 +46,6 @@ namespace RuffLife.Web.Controllers.API
             _walkerService.CreateWalker(walker);
         }
 
-        [Route("{walkerId}/reviews")]
-        [HttpGet]
-        public IHttpActionResult GetreviewsForWalkerByWalker (int walkerId)
-        {
-            var reviewsForWalkers = _reviewForWalkerService.GetReviewsForWalkerByWalker(walkerId);
-            return Ok(reviewsForWalkers);
-        }
-
-        [Route("{walkerId}/reviews/create")]
-        [HttpPost]
-        public void CreateReviewForWalker(CreateReviewForWalkerDto newReviewForWalker, int walkerId)
-        {
-            newReviewForWalker.Walker = _walkerService.GetWalker(walkerId);
-            _reviewForWalkerService.CreateReviewForWalker(newReviewForWalker);
-        }
-
         [Route("{walkerId}/walks")]
         [HttpGet]
         public IHttpActionResult GetWalksByWalker(int walkerId)
@@ -84,7 +65,6 @@ namespace RuffLife.Web.Controllers.API
         protected override void Dispose(bool disposing)
         {
             _walkerService.Dispose();
-            _reviewForWalkerService.Dispose();
             _walkService.Dispose();
             base.Dispose(disposing);
         }

@@ -77,16 +77,12 @@ namespace RuffLife.Web
 
             kernel.Bind<IOwnerRepository>().To<OwnerRepository>();
             kernel.Bind<IDogRepository>().To<DogRepository>();
-            kernel.Bind<IReviewForDogRepository>().To<ReviewForDogRepository>();
-            kernel.Bind<IReviewForWalkerRepository>().To<ReviewForWalkerRepository>();
             kernel.Bind<IWalkerRepository>().To<WalkerRepository>();
             kernel.Bind<IWalkRepository>().To<WalkRepository>();
 
 
             kernel.Bind<IOwnerService>().To<OwnerService>();
             kernel.Bind<IDogService>().To<DogService>();
-            kernel.Bind<IReviewForDogService>().To<ReviewForDogService>();
-            kernel.Bind<IReviewForWalkerService>().To<ReviewForWalkerService>();
             kernel.Bind<IWalkerService>().To<WalkerService>();
             kernel.Bind<IWalkService>().To<WalkService>();
         }        

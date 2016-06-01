@@ -18,8 +18,6 @@ namespace RuffLife.Data.Context
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Walker> Walkers { get; set; }
         public DbSet<Walk> Walks { get; set; }
-        public DbSet<ReviewForDog> ReviewsForDogs { get; set; }
-        public DbSet<ReviewForWalker> ReviewsForWalkers { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

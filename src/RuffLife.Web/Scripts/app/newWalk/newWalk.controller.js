@@ -2,9 +2,9 @@
 
 angular.module('app').controller('newWalkController', NewWalkController);
 
-NewWalkController.$inject = ['walkerService', '$rootScope', '$state'];
+NewWalkController.$inject = ['walkerService', '$rootScope', '$state', 'walkService'];
 
-function NewWalkController(walkerService, $rootScope, $state) {
+function NewWalkController(walkerService, $rootScope, $state, walkService) {
     var vm = this;
     vm.walkers = []
 
@@ -14,13 +14,6 @@ function NewWalkController(walkerService, $rootScope, $state) {
 
     }
 
-    function createWalk (){
-        walkService.createWalk(vm.newWalk)
-            .success(() => {
-                return $state.go('dashboard')
-            })
-    }
-
     getWalkers();
 
     function getWalkers() {
@@ -28,6 +21,15 @@ function NewWalkController(walkerService, $rootScope, $state) {
             .then(result => {
                 vm.walkers = result.data;
             });
+    }
+
+    vm.createWalk = function(){
+        vm.newWalk.walker = vm.walker;
+        walkService.createWalk(vm.newWalk)
+            .success(() => {
+                return $state.go('dashboard');
+            });
+
     }
 
 }

@@ -36,7 +36,6 @@ namespace RuffLife.Core.Repositories
         {
             var owners = _ruffLifeContext.Owners
                 .Include("Dogs")
-                .Include("ReviewsGiven")
                 .ToList();
 
             return owners.Select(owner => Mapper.Map<ViewOwnerDto>(owner)).ToList();
@@ -46,7 +45,6 @@ namespace RuffLife.Core.Repositories
         {
             var owner = _ruffLifeContext.Owners
                 .Include("Dogs")
-                .Include("ReviewsGiven")
                 .FirstOrDefault(x => x.Id == ownerId);
 
             return Mapper.Map<ViewOwnerDto>(owner);

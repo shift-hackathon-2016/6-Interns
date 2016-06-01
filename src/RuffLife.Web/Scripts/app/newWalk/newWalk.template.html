@@ -14,11 +14,21 @@
 
         </div>
     </div>
+</div>
+<div class="container">
+    <br />
     <form>
         <div class="form-group">
+            <label>Username: {{vm.newWalk.user.Username}}</label>
+        </div>
+        <div class="form-group">
+            <label>Select walker for your dog:</label>
             <select class="form-control" ng-model="vm.walker">
-                <option ng-repeat="walkers in vm.walkers" value="{{walker.Id}}">{{walker.Username}}</option>
+                <option ng-repeat="walker in vm.walkers" value="{{walker.Id}}" ng-model="vm.newWalk.walker">{{walker.Username}}</option>
             </select>
+        </div>
+        <div class="form-group">
+            <div ng-click="vm.createWalk()" class="btn btn-default">Create walk!</div>
         </div>
     </form>
 </div>

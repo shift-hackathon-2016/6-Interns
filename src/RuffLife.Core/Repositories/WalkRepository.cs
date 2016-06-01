@@ -22,13 +22,17 @@ namespace RuffLife.Core.Repositories
 
         public void CreateWalk(CreateWalkDto newWalk)
         {
+            var newDogs = newWalk.Dogs.Select(d => Mapper.Map<Dog>(d)).ToList();
+            
+            var newWalker = Mapper.Map<Walker>(newWalk.Walker);
             var walk = new Walk()
             {
                 StartTime = newWalk.StartTime,
                 EndTime = newWalk.EndTime,
                 Location = newWalk.Location,
-                Dogs = newWalk.Dogs.Select(dog => Mapper.Map<Dog>(newWalk.Dogs)).ToList(),
-                IsFinished = false
+                Dogs = newDogs,
+                Walker = newWalker,
+                Price = 10
             };
 
             _ruffLifeContext.Walks.Add(walk);
@@ -45,7 +49,6 @@ namespace RuffLife.Core.Repositories
 
             walk.Price = updatedWalk.Price;
             walk.Walker = Mapper.Map<Walker>(updatedWalk.Walker);
-            walk.IsFinished = updatedWalk.IsFinished;
 
             _ruffLifeContext.SaveChanges();
         }

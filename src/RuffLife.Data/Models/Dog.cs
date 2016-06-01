@@ -18,9 +18,7 @@ namespace RuffLife.Data.Models
 
         [JsonIgnore]
         public virtual Owner Owner { get; set; }
-
-        [JsonIgnore]
-        public virtual ICollection<ReviewForDog> ReviewsReceived { get; set; }
+        
         [JsonIgnore]
         public virtual ICollection<Walk> Walks { get; set; }
     }

@@ -16,11 +16,7 @@ namespace RuffLife.Data.Context.Configurations
             HasRequired(dog => dog.Owner)
                 .WithMany(owner => owner.Dogs)
                 .WillCascadeOnDelete(false);
-
-            HasMany(d => d.ReviewsReceived)
-                .WithRequired(r => r.Dog)
-                .WillCascadeOnDelete();
-
+            
             HasMany(d => d.Walks)
                 .WithMany(walk => walk.Dogs)
                 .Map(dogWalks => dogWalks

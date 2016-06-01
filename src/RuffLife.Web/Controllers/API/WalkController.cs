@@ -1,6 +1,13 @@
-﻿using RuffLife.Core.Models.Walk;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using RuffLife.Core.Models.Walk;
 using RuffLife.Core.Services.Interfaces;
 using System.Web.Http;
+using RuffLife.Core.Models.Dog;
+using RuffLife.Core.Models.Owner;
+using RuffLife.Core.Models.Walker;
+using RuffLife.Data.Models;
 
 namespace RuffLife.Web.Controllers.API
 {
@@ -9,11 +16,18 @@ namespace RuffLife.Web.Controllers.API
     {
         private readonly IWalkService _walkService;
         private readonly IDogService _dogService;
+        private readonly IOwnerService _ownerService;
+        private readonly IWalkerService _walkerService;
 
-        public WalkController(IWalkService walkService, IDogService dogService)
+        public WalkController(IWalkService walkService, 
+            IDogService dogService,
+            IOwnerService ownerService,
+            IWalkerService walkerService)
         {
             _walkService = walkService;
             _dogService = dogService;
+            _ownerService = ownerService;
+            _walkerService = walkerService;
         }
 
         [Route("get/{Id}")]
@@ -24,12 +38,26 @@ namespace RuffLife.Web.Controllers.API
             return Ok(walk);
         }
 
-        [Route("create")]
+        [Route("{walkerId}/createWalk")]
         [HttpPost]
-        public void CreateWalk(CreateWalkDto newWalk)
+        public IHttpActionResult CreateWalk(ViewOwnerDto newWalk, int walkerId)
         {
-            _walkService.CreateWalk(newWalk);
+
+            var walk = new CreateWalkDto()
+            {
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.Add(new TimeSpan(1, 0, 0)),
+                Walker = _walkerService.GetWalker(walkerId),
+                Dogs = _dogService.GetDogsByOwner(newWalk.Id),
+                IsFinished = false,
+                Location = newWalk.Location
+            };
+
+            _walkService.CreateWalk(walk);
+            return Ok();
         }
+
+
 
         [Route("update/{Id}")]
         [HttpPost]
