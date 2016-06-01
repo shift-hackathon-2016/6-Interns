@@ -1,48 +1,21 @@
-﻿<h1>Owner</h1>
+﻿<div class="container">
+    <h1>Owner - {{vm.user.Username}}</h1>
 
-<div ng-repeat="pet in vm.user.pet">
-    <p>{{vm.user.pet.petName}}</p>
-    <button ng-click="vm.walkOrder()" >Walk me!</button>
-    <br />
-    <h2>Past walks</h2>
+
     <div class="btn btn-primary" ui-sref="new-walk">Create Walk</div>
-    <div ng-repeat="pastWalk in vm.pastWalks">
-        <span>{{pastWalk.startTime | date:'dd-MM-yyyy'}}</span>
-        <span>{{pastWalk.startTime | date:'HH:mm'}} - {{pastWalk.endTime | date:'HH:mm'}}</span>
-        <p>{{pastWalk.location}}</p>
-        <p>{{pastWalk.price}}</p>
-        <p>{{pastWalk.walker.username}}</p>
-    </div>
-    <br/>
-    <h2>Current walks</h2>
-    <div>
-        <span>{{vm.currentWalk.startTime | date:'dd-MM-yyyy'}}</span>
-        <span>{{vm.currentWalk.startTime | date:'HH:mm'}} - {{vm.currentWalk.endTime | date:'HH:mm'}}</span>
-        <p>{{vm.currentWalk.location}}</p>
-        <p>{{vm.currentWalk.price}}</p>
-        <p>{{vm.currentWalk.walker.username}}</p>
-    </div>
-    <br />
-    <h2>Ordered walks</h2>
-    <div ng-repeat="orderedWalk in vm.orderedWalks">
-        <span>{{orderedWalk.startTime | date:'dd-MM-yyyy'}}</span>
-        <span>{{orderedWalk.startTime | date:'HH:mm'}} - {{orderedWalk.endTime | date:'HH:mm'}}</span>
-        <p>{{orderedWalk.location}}</p>
-        <p>{{orderedWalk.price}}</p>
-        <p>{{orderedWalk.walker.username}}</p>
-    </div>
-    <br />
-</div>
 
-<button ng-click="vm.isAddPet = !vm.isAddPet">Add new pet</button>
 
-<div ng-show="vm.isAddPet" >
-    <form name="registerForm" novalidate>
-        <input type="text" ng-model="vm.dog.name" placeholder="Name of the pet" required /><br />
-        <input type="text" ng-model="vm.dog.breed" placeholder="Breed of the pet" required /><br />
-        <input type="number" ng-model="vm.dog.age" placeholder="Age of the pet" required /><br />
-        <input type="text" ng-model="vm.dog.gender" placeholder="Gender of the pet" required /><br />
-        <textarea ng-model="vm.petDescription" required>Describe your pet</textarea>
-        <input type="submit" ng-click="vm.save()" value="Submit" />
-    </form>
+    <button ng-click="vm.isAddPet = !vm.isAddPet">Add new pet</button>
+
+    <div ng-show="vm.isAddPet">
+        <form name="registerForm" novalidate class="form-group">
+            
+            <input class="form-control" type="text" ng-model="vm.dog.name" placeholder="Name of the pet" required/><br/>
+            <input class="form-control" type="text" ng-model="vm.dog.breed" placeholder="Breed of the pet" required/><br/>
+            <input class="form-control" type="number" ng-model="vm.dog.age" placeholder="Age of the pet" required/><br/>
+            <input class="form-control" type="text" ng-model="vm.dog.gender" placeholder="Gender of the pet" required/><br/>
+            <textarea class="form-control" ng-model="vm.petDescription" required>Describe your pet</textarea>
+            <input  class="form-control"type="submit" ng-click="vm.save()" value="Submit"/>
+        </form>
+    </div>
 </div>

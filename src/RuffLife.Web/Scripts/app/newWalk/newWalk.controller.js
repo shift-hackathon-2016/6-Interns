@@ -27,6 +27,7 @@ function NewWalkController(walkerService, $rootScope, $state, walkService) {
         vm.newWalk.walker = vm.walker;
         walkService.createWalk(vm.newWalk)
             .success(() => {
+                $rootScope.user = vm.newWalk.user;
                 return $state.go('dashboard');
             });
 
