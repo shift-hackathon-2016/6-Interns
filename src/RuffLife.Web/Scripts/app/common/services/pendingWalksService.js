@@ -17,8 +17,10 @@ function PendingWalksService($http, $q, $rootScope) {
     }
 
     function removePendingWalk(id) {
+        console.log(pendingWalks);
         pendingWalks.splice(id, 1);
-        return $q.resolve(pendingWalks);
+        console.log(pendingWalks);
+        $rootScope.$broadcast('PENDING_WALK_REMOVED', pendingWalks);
     }
 
     return {
