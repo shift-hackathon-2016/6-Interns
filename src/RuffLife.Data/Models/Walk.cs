@@ -18,5 +18,7 @@ namespace RuffLife.Data.Models
         public virtual Walker Walker { get; set; }
         [JsonIgnore]
         public virtual ICollection<Dog> Dogs { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<WalkOffer> WalkOffers { get; set; }
     }
 }

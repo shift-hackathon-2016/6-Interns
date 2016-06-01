@@ -33,12 +33,13 @@ namespace RuffLife.Core.Repositories
             _ruffLifeContext.SaveChanges();
         }
 
-        public void UpdateWalkOffer(UpdateWalkOfferDto updatedWalkOffer)
+        public void LockWalkOffer(int walkOfferId)
         {
             var walkOffer = _ruffLifeContext.WalkOffers
                 .Include("Walker")
                 .Include("Walk")
-                .FirstOrDefault(x => x.Id == updatedWalkOffer.Id);
+                .Include("WalkOffers")
+                .FirstOrDefault(x => x.Id == walkOfferId);
 
             walkOffer.IsActive = false;
 
@@ -50,6 +51,7 @@ namespace RuffLife.Core.Repositories
             var walkOffers = _ruffLifeContext.WalkOffers
                 .Include("Walker")
                 .Include("Walk")
+                .Include("WalkOffers")
                 .Where(x => x.Walk.Id == walkId)
                 .ToList();
 

@@ -1,4 +1,5 @@
 ﻿using RuffLife.Core.Models.Walk;
+using RuffLife.Core.Models.Walker;
 using RuffLife.Core.Repositories.Interfaces;
 using RuffLife.Core.Services.Interfaces;
 using System;
@@ -41,6 +42,11 @@ namespace RuffLife.Core.Services
         public IList<ViewWalkDto> GetWalksByDog(int dogId)
         {
             return _walkRepository.GetWalksByDog(dogId);
+        }
+
+        public IList<ViewWalkDto> GetActiveOffersForWalker(int walkerId)
+        {
+            return _walkRepository.GetActiveOffersForWalker(walkerId);
         }
 
         public void Dispose()
