@@ -8,6 +8,7 @@ function DashboardOwnerController(ownerService, orderedDogWalksService, pastDogW
     var vm = this;
 
     vm.isAddPet = false;
+    vm.isOrdered = false;
     vm.dog = {};
     vm.user = {
         username: "Izabela",
@@ -34,15 +35,11 @@ function DashboardOwnerController(ownerService, orderedDogWalksService, pastDogW
 
     vm.walkOrder = function () {
 
+        vm.isOrdered = false;
     };
 
     vm.save = function () {
         vm.isAddPet = false;
-        console.log($rootScope.user);
-        var id = $rootScope.user.Id;
-        ownerService.addDog(vm.dog, id).then(function () {
-            $rootScope.user.Dogs.push(vm.dog);
-            console.log($rootScope.user);
-        });
+        //dog.push();
     };
 };
