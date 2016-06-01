@@ -2,7 +2,6 @@
 
 <div ng-repeat="pet in vm.user.pet">
     <p>{{vm.user.pet.petName}}</p>
-    <button ng-click="vm.walkOrder()" >Walk me!</button>
     <br />
     <h2>Past walks</h2>
     <div ng-repeat="pastWalk in vm.pastWalks">
@@ -31,6 +30,20 @@
         <p>{{orderedWalk.walker.username}}</p>
     </div>
     <br />
+
+    <button ng-click="vm.walkOrder()">Walk me!</button>
+    <div ng-show="vm.isOrdered">
+        <form name="registerForm" novalidate>
+            <input type="datetime" ng-model="vm.walk.StartTime" placeholder="Start hour" required /><br />
+            <input type="datetime" ng-model="vm.walk.EndTime" placeholder="End hour" required /><br />
+            <input type="text" ng-model="vm.dog.breed" placeholder="Breed of the pet" required /><br />
+            <input type="number" ng-model="vm.dog.age" placeholder="Age of the pet" required /><br />
+            <input type="text" ng-model="vm.dog.gender" placeholder="Gender of the pet" required /><br />
+            <textarea ng-model="vm.petDescription" required>Describe your pet</textarea>
+            <input type="submit" ng-click="vm.save()" value="Submit" />
+        </form>
+    </div>
+
 </div>
 
 <button ng-click="vm.isAddPet = !vm.isAddPet">Add new pet</button>

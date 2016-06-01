@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('app', [
-    'ui.router'
+    'ui.router', 'ui.bootstrap'
 ]);
 
 window.Intercom("boot", {
