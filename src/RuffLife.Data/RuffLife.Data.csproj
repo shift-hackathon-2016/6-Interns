@@ -73,7 +73,6 @@
     <Compile Include="Models\ReviewForWalker.cs" />
     <Compile Include="Models\Walk.cs" />
     <Compile Include="Models\Walker.cs" />
-    <Compile Include="Models\WalkOffer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -35,7 +35,7 @@ namespace RuffLife.Core.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _reviewForWalkerRepository.Dispose();
         }
     }
 }

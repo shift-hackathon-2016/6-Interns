@@ -20,7 +20,12 @@ function WalkerService($http, $q) {
         });
     };
 
+    function httpAllWalkers() {
+        return $http.get('/api/walkers/all');
+    }
+
     return {
+        httpAllWalkers: httpAllWalkers,
         walkers: walkers,
         addWalker: addWalker
     };

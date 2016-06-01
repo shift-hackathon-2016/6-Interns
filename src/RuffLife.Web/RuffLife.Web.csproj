@@ -105,6 +105,10 @@
       <HintPath>..\packages\Ninject.Web.WebApi.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PubNub-Messaging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pubnub.3.7.5.0\lib\net40\PubNub-Messaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -240,6 +244,7 @@
     <Content Include="Scripts\app\common\services\userAuthService.js" />
     <Content Include="Scripts\app\common\services\walkerReviewService.js" />
     <Content Include="Scripts\app\common\services\walkerService.js" />
+    <Content Include="Scripts\app\common\services\walkService.js" />
     <Content Include="Scripts\app\dashboard\dashboard.state.js" />
     <Content Include="Scripts\app\dashboard\dashboard.template.html" />
     <Content Include="Scripts\app\dashboard\dashboard.controller.js" />
@@ -252,6 +257,9 @@
     <Content Include="Scripts\app\newUser\newUser.controller.js" />
     <Content Include="Scripts\app\newUser\newUser.state.js" />
     <Content Include="Scripts\app\newUser\newUser.template.html" />
+    <Content Include="Scripts\app\newWalk\newWalk.controller.js" />
+    <Content Include="Scripts\app\newWalk\newWalk.state.js" />
+    <Content Include="Scripts\app\newWalk\newWalk.template.html" />
     <Content Include="Scripts\app\registerUserType\registerUserType.controller.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.state.js" />
     <Content Include="Scripts\app\registerUserType\registerUserType.template.html" />
